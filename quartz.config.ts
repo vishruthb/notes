@@ -8,19 +8,20 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "🪴 Quartz 4.0",
+    pageTitle: "Vishruth's Notes",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "vishruthb.github.io/notes",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     theme: {
-      cdnCaching: true,
+      cdnCaching: false,
       typography: {
+        // Overriden in custom styling
         header: "Schibsted Grotesk",
         body: "Inter",
         code: "Fira Code",
