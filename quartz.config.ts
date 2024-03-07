@@ -19,10 +19,10 @@ const config: QuartzConfig = {
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     theme: {
-      cdnCaching: false,
+      cdnCaching: true,
       typography: {
         // Overriden in custom styling
-        header: "Schibsted Grotesk",
+        header: "Inter",
         body: "Inter",
         code: "Fira Code",
       },
