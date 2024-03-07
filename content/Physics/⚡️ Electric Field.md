@@ -1,3 +1,7 @@
+---
+title: ⚡️ Electric Field
+---
+
 Fundamental law is $\vec{F} = q\vec{E}$, which can be rearranged to give the field $\vec{E}=\frac{\vec{F}}{q}$.
 
 Unit of electric field is $\frac{N}{C}$.

@@ -1,3 +1,7 @@
+---
+title: ⚖️ Coulomb's Law
+---
+
 The amount of force between two electrically charged particles at rest. This force is called *electrostatic force* or *Coulomb Force*.
 
 The formula reads as:
