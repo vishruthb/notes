@@ -1,7 +1,6 @@
 ---
 title: 💡 Key Insights
 ---
-
 ## Time vs. Space
 
 - Need to consider tradeoffs to get more efficient solutions.
