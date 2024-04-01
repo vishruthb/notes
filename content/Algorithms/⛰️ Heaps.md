@@ -2,12 +2,12 @@
 
 Used to get the smallest element (min heap) whenever the element is popped. 
 
-### Types:
+### Types
 
 - **MaxHeap**: The key present at the root node must be the **maximum** of all it's children.
 - **MinHeap**: Key present at the root node must be the **minimum** among all of it's child keys.
 
-> [!NOTE]
+> [!Note]
  > Same properties wil be true for all subtrees in that [[🌳 Binary Tree]]
 
 ## Implementation
