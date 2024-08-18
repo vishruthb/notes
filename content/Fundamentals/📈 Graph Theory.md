@@ -1,1 +1,0 @@
-Graphs are made up of **vertices** that are connected by **edges**. A *bipartite* graph has two different groups of vertices. 
