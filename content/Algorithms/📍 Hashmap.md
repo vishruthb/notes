@@ -1,9 +1,9 @@
-## Theory
-
+# Map Problem
+Maintain a set of key-value pairs with quick insertion, removal, and retrieval.
+# Theory
 Are indexed data structures through **key-value pairs** with quick retrieval, insertion, and deletion. To handle collisions, we can use **chaining** (where each slot holds a list of items that hashed to the same slot) or **open addressing** (where a collision triggers a sequence to find an empty slot).
 
-## Implementation
-
+# Implementation
 ```python
 class HashNode:
     def __init__(self, key, value):
@@ -62,6 +62,5 @@ class HashMap:
             node = node.next
 ```
 
-## Runtime
-
+# Runtime
 All operations in the best case are $O(1)$ when there are no collisions, or if the resolution is efficient. 

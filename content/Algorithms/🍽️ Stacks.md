@@ -1,11 +1,9 @@
-## Theory
-
+# Theory
 A stack works as **last-in, first-out (LIFO)**.
 
 The `insert` operation for a stack is often called `push`, and `delete` operation is usually `pop`. An attempt to pop an empty stack results in an **underflow**, and if the top index value exceeds the size of the stack, we get an **overflow**.
 
-## Implementation
-
+# Implementation
 ```python
 # using a singly linked list
 
@@ -49,11 +47,8 @@ class Stack:
 		return remove.value
 ```
 
-## Runtime
-
+# Runtime
 All above operations are in $O(1)$ time.
-
-## Further Notes
-
+# Further Notes
 - **Advantage:** Efficient for adding/removing elements. Can be used to reverse the order of elements, implement undo/redo functions, etc.
 - **Drawback:** Does not provide fast access to elements other than the top element, not efficient for searching (need to pop one by one until specific element is found).

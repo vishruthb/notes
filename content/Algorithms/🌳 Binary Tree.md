@@ -1,12 +1,10 @@
-## Tree Traversal
-
+# Tree Traversal
 Navigate through all the nodes in a binary tree, typically to perform some operation on each node.
 
-## Theory
-
+# Theory
 A binary tree is a hierarchical structure consisting of nodes, each having up to two children referred to as the left and right child. It's used for various operations, like sorting and searching data, due to its hierarchical nature.
 
-## Implementation
+# Implementation
 
 ```python
 class Node:
@@ -34,6 +32,5 @@ def postorder_traversal(root):
         print(root.value)
 ```
 
-## Runtime
-
+# Runtime
 **Traversal**: $O(n)$ for inorder, preorder, and postorder traversals, since each node is visited exactly once.
