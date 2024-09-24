@@ -14,5 +14,7 @@ def generate_subsets(arr, index=0, current=[]):
 ```
 
 # Runtime
-$$T: O(2^n)$$$$S: O(n)$$
+Time Complexity: $O(2^n)$
+Space Complexity: $O(n)$
+
 Each element has two choices: to be included or not, leading to an exponential number of subsets. The space complexity is also linear due to the call stack holding $n$ frames during the recursion.
