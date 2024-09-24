@@ -1,65 +1,98 @@
 # Map Problem
 Maintain a set of key-value pairs with quick insertion, removal, and retrieval.
 # Theory
-Are indexed data structures through **key-value pairs** with quick retrieval, insertion, and deletion. To handle collisions, we can use **chaining** (where each slot holds a list of items that hashed to the same slot) or **open addressing** (where a collision triggers a sequence to find an empty slot).
+Are data structures indexed through **key-value pairs** with quick retrieval, insertion, and deletion. To handle collisions, we can use **chaining** (where each slot holds a list of items that hashed to the same slot) or **open addressing** (where a collision triggers a sequence to find an empty slot).
 
 # Implementation
 ```python
-class HashNode:
+class Node:
     def __init__(self, key, value):
         self.key = key
         self.value = value
         self.next = None
 
-class HashMap:
-    def __init__(self, capacity=10):
+class HashTable:
+    
+    def __init__(self, capacity: int):
         self.capacity = capacity
         self.size = 0
-        self.buckets = [None] * self.capacity
+        self.table = [None] * self.capacity
 
-    def get_hash(self, key):
-        return hash(key) % self.capacity
+    def hash_function(self, key: int) -> int:
+        return key % self.capacity
 
-    def insert(self, key, value):
-        index = self.get_hash(key)
-        node = self.buckets[index]
+    def insert(self, key: int, value: int) -> None:
+        index = self.hash_function(key)
+        node = self.table[index]
+
         if not node:
-            self.buckets[index] = HashNode(key, value)
-            self.size += 1
-            return
-        prev = None
-        while node:
-            if node.key == key:
-                node.value = value
-                return
-            prev = node
-            node = node.next
-        prev.next = HashNode(key, value)
+            self.table[index] = Node(key, value)
+        else:
+            prev = None
+            while node:
+                if node.key == key:
+                    node.value = value
+                    return
+                prev, node = node, node.next
+            prev.next = Node(key, value)
+        
         self.size += 1
 
-    def get(self, key):
-        index = self.get_hash(key)
-        node = self.buckets[index]
+        if self.size / self.capacity >= 0.5:
+            self.resize()
+
+    def get(self, key: int) -> int:
+        index = self.hash_function(key)
+        node = self.table[index]
+
         while node:
             if node.key == key:
                 return node.value
             node = node.next
-        return None
 
-    def remove(self, key):
-        index = self.get_hash(key)
-        node = self.buckets[index]
+        return -1
+
+
+    def remove(self, key: int) -> bool:
+        index = self.hash_function(key)
+        node = self.table[index]
         prev = None
+
         while node:
             if node.key == key:
                 if prev:
                     prev.next = node.next
                 else:
-                    self.buckets[index] = node.next
+                    self.table[index] = node.next
                 self.size -= 1
-                return
-            prev = node
-            node = node.next
+                return True
+            prev, node = node, node.next
+        
+        return False
+
+    def getSize(self) -> int:
+        return self.size
+
+    def getCapacity(self) -> int:
+        return self.capacity
+
+    def resize(self) -> None:
+        self.capacity *= 2
+        new_table = [None] * self.capacity
+
+        for node in self.table:
+            while node:
+                index = node.key % self.capacity
+                if new_table[index] is None:
+                    new_table[index] = Node(node.key, node.value)
+                else:
+                    new_node = new_table[index]
+                    while new_node.next:
+                        new_node = new_node.next
+                    new_node.next = Node(node.key, node.value)
+                node = node.next
+        
+        self.table = new_table
 ```
 
 # Runtime

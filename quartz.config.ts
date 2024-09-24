@@ -12,7 +12,7 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "plausible",
+      provider: 'google', tagId: 'G-N90BRN7P8K'
     },
     locale: "en-US",
     baseUrl: "vishruthb.github.io/notes",
@@ -22,13 +22,13 @@ const config: QuartzConfig = {
       cdnCaching: true,
       typography: {
         // Overriden in custom styling
-        header: "Inter",
-        body: "Inter",
+        header: "Manrope",
+        body: "Manrope",
         code: "Fira Code",
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
+          light: "#ffffff",
           lightgray: "#e5e5e5",
           gray: "#b8b8b8",
           darkgray: "#4e4e4e",
