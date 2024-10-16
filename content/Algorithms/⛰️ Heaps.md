@@ -6,7 +6,7 @@ Used to get the smallest element (min heap) whenever the element is popped.
 - **MinHeap**: Key present at the root node must be the **minimum** among all of it's child keys.
 
 > [!Note]
- > Same properties wil be true for all subtrees in that [[🌳 Binary Tree]]
+ > Same properties wil be true for all subtrees in [[🌳 Binary Tree]]
 
 # Implementation
 We use the `heapq` module in python.
