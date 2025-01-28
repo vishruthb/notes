@@ -1,8 +1,5 @@
 # Optimization Problem 
-Break problems  down into overlapping subproblems, storing their solutions to avoid redundant calculations and achieve optimal efficiency.
-
-# Theory
-Divide problems into smaller subproblems, stores their results, and build up the smaller solution to the main problem, leveraging both the overlapping subproblems and optimal substructure properties.
+Break problems down into overlapping subproblems, storing their solutions (memoization) to avoid redundant calculations and achieve optimal efficiency as opposed to brute force recursion.
 
 # Implementation
 ```python
@@ -15,5 +12,4 @@ def fibonacci(n):
 ```
 
 # Runtime
-$$O(n)$$
-DP avoids redundant calculations by storing subproblem results, leading to a linear time complexity. Space complexity is also $O(n)$ due to the storage array used.
+DP avoids redundant calculations by storing subproblem results, leading to a  time complexity of $O(n)$. Space complexity is also $O(n)$ due to the storage array used.

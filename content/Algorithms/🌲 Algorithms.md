@@ -17,5 +17,5 @@ Algorithms let us think about computation independently of the limitations of a 
 3. [[🏁 Queues]] supports adding elements to the rear and removing elements from the front.
 4. [[⛓️ Linked List]] is a linear data structure that contains a reference to the next node, forming a sequence.
 5. [[📊 Graphs]] are connected by edges, representing relationships between objects.
-6. [[🌳 Binary Tree]] is made up of nodes where each node has at most two children, referred to as the left child and the right child.
+6. [[🌳 Binary Search Tree]] is a binary tree in which every node satisfies the BST property: the value of each node is greater than all values in its left subtree and less than all values in its right subtree.
 7. [[⛰️ Heaps]] are specialized trees that satisfy the heap property, where the parent node is greater than or equal to its children.
