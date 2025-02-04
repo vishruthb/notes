@@ -21,6 +21,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Fetch all history for git info
+          submodules: true
       - uses: actions/setup-node@v3
         with:
           node-version: 18.14
@@ -29,7 +30,7 @@ jobs:
       - name: Build Quartz
         run: npx quartz build
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v2
         with:
           path: public
  
