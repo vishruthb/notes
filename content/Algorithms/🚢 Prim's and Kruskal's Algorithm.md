@@ -66,9 +66,9 @@ def kruskal(graph, num_vertices):
 ```
 
 ### Runtime:
-- Sorting Edges: $(O(E \log E)$
-- Union-Find Operations: $O(E \cdot \alpha(V))$, where $\alpha$ is the inverse Ackermann function.
-- **Overall**: $O(E \log E)$
+- Sorting Edges: $(O(E \log V)$
+- Union-Find Operations: $O(E \cdot \alpha(V))$, where $\alpha$ is the inverse Ackermann function. Find takes the height of the tree, which we can prove to be up to $O(\lg(n))$, where $n$ is the number of vertices $|V|$.
+- **Overall**: $O(E \log V)$
 
 ## Prim’s Algorithm
 
