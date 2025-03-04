@@ -1,4 +1,4 @@
-# Theory :: Balancing Problem
+# Balancing Problem
 An AVL Tree is a self-balancing Binary Search Tree (BST). It maintains the following property:
 
 - **Balance Factor**: For every node, the height of the left and right subtrees differs by at most 1.

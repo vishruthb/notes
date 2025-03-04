@@ -1,4 +1,4 @@
-# Theory
+# Storing Data
 A Binary Search Tree (BST) is a hierarchical data structure that stores elements in a way that allows for efficient insertion, deletion, and searching operations. Each node in a BST satisfies the following property:
 
 - **BST Property**: For any node `N`:
