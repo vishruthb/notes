@@ -21,7 +21,7 @@ OS uses:
 - [[🧠 Memory Protections]]
 to protect itself from applications and protect applications from each other, while still performing special tasks like managing resources
 # Interactions
-OS is a giant interrupt handler, once the system is booted up, all entries to the kernel occurs due to:
+OS is a giant interrupt handler, once the system is booted up, all entries to the kernel occurs due to [[🎡 Events]] such as:
 - [[💥 Faults]]
 - [[📞 System Calls]]
 - Timer and I/O [[🛑 Interrupts]]
@@ -30,3 +30,10 @@ This happens via events at the user level and through the dispatcher at the kern
 # Referencing Data
 - Processes and the OS are in different address spaces
 - Use names instead of pointers, such as the integer object handles or descriptors such as the UNIX file descriptors
+# Processes
+- A [[🏠 Process]] is the OS's abstraction for a running program, used to manage execution, scheduling, and other resources
+- An instance of a program in execution
+- Every process thinks it owns the CPU. However, with 1 CPU, all processes share the same physical CPUs, and with multiple CPUs, processes share them as well.
+	- Possible via timer interrupts, data structure to hold execution state while not executing, scheduling policies
+- **Example:** Sequential Process
+	- Everything happens sequentially, one instruction at a time

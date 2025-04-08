@@ -8,10 +8,10 @@ After the system is booted, all entry to the kernel occurs in response to some e
 # Types
 Two main types: exceptions and interrupts.
 ## Exceptions
-Caused by program executing instructions.
+Caused by program executing instructions. (synchronous)
 - Executing a privileged instruction (fault)
 - Requesting services from the operating system (sys call)
 - Also called 'traps'
 ## Interrupts
-Caused by an external event.
+Caused by an external event. (asynchronous)
 - Device finishes I/O, timer expires, etc.
