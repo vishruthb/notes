@@ -9,8 +9,9 @@ Serves as the OS's container for a program's execution environment, storing all 
 
 Naming: process ID (PID)
 # Address Space
-| 0xFFFFFFFF    | Stack                       |                      |
+|               |                             |                      |
 | ------------- | --------------------------- | -------------------- |
+| 0xFFFFFFFF    | Stack                       |                      |
 | &uarr;        | &darr; &uarr;               | Stack Pointer (SP)   |
 | Address Space | Heap (Dynamic Memory Alloc) |                      |
 | &darr;        | Static Data (Data Segment)  |                      |
@@ -58,3 +59,45 @@ Creation API:
 - Process Creation:
 	- Creates a duplicate of the original process
 	- `fork()` returns twice, returning `0` to the child and the child's PID to the parent
+- Useful when the child is cooperating with the parent, relies upon the parent's data to accomplish task
+- Example: Web Server
+```c
+while (1) {
+	int sock = accept();
+	int child_pid = fork();
+	if (child_pid == 0) {
+		// Handle client request and exit
+	} else {
+		// Continue
+	}
+}
+```
+# Starting a New Program
+`exec` in Unix. Serves as the sys call for starting a program: `int exec(char *prog, char *argv[])`
+- Stops the current process
+- Loads the program `prog` into the process address space
+- Initializes hardware context and args for the new program
+- Files remain open
+- Sets the process state as ready
+- **Does not create a new process**, just replaces current process's memory image with a new program (new code, data, stack, etc. but same PID and key attributes)
+Returns only if failed with an error code.
+
+`fork()` creates a new process, and `ecex()` in that child process loads the new program.
+# Process Termination
+- Unix: `exit(int status)`
+- Windows: `ExitProcess(int status)`
+
+The OS frees resources and terminates the process by:
+- Closing open files and network connections
+- Releasing allocated memory
+- Terminating all threads
+- Removes PCB from kernel data structures, delete
+
+Process does not need to clean itself up, instead the OS does it because it doesn't "trust" the process to do it itself.
+
+# `wait()`
+- Pauses the current process until any child process ends
+- `waitpid()` suspends until the specified child process ends
+- `wait()` returns the status code of the child
+- Unix: Every process must be collected by a parent after it finishes executing (and becomes a zombie process)
+- If a parent process exits before its child, the child becomes an orphan
