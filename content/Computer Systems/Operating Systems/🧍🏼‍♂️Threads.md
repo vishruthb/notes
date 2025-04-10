@@ -22,11 +22,13 @@ Each PCB contains two kinds of information:
 While a thread is running, its hardware state (PC, SP, regs, are in the CPU), where hardware registers contain the current values.
 - OS stops running a thread => Saves the registers into the thread's TCB
 - OS resumes running a thread => Loads the registers from the values store that thread's TCB
+
 **Context Switch** is the process of changing the CPU hardware state from one thread to another, as often as every millisecond.
 # Thread Queues
 OS maintains a collection of queues to keep track of threads.
 - Ready queue => Threads that are ready to run
 - Waiting queues => Can be many, one for each type of wait (disk, timer, network, synchronization)
+
 Each TCB is queued on a state queue according to its current state. When a thread changes state, the OS unlinks its TCB from one queue and links it into another.
 # Thread Scheduling
 ## Non-Preemptive Scheduling
@@ -56,8 +58,10 @@ aka. OS-managed threads
 - Windows: threads
 - POSIX Threads: pthreads
 OS manages threads and processes:
-- All thread oeprations are implemented in the kernel
+- All thread operations are implemented in the kernel
 - OS schedules all the threads in the system
+
+Makes concurrency much cheaper than processes, much less state to allocate and initialize.
 ## User and Kernel Stacks
 |                  |                  |                                                            |
 | ---------------- | ---------------- | ---------------------------------------------------------- |
@@ -67,5 +71,30 @@ OS manages threads and processes:
 - Physical parallelism (can run on multiple cores)
 - Multiple separate system calls/events
 ## Limitations
-
+- Suffer from overhead for fine-grained concurrency
+- Thread operations still require sys calls
+- Have to be general to support languages, runtimes, etc.
+# User-Level Threads
+Threads that are managed entirely by a runtie system (user-level library).
+- Small and fast, represented by a PC, registers, stack, and small TCB
+- Creating a new thread, switching between threads, and synchronizing threads are done via procedure calls
+- User-level thread operations 10-100x faster than kernel threads
+- Multiple user threads multiplexed on top of kernel thread
+	- No physical parallelism
+	- Only one sys call/event at a time
+## Limitations
+Invisible to the OS -> OS can make poor decisions:
+- Blocking a process that initiated an I/O, even though the process has other user-level threads that can execute
+- Scheduling a process with no runnable user-level threads
+# Multithreading Models
+- Many-to-One:
+	- Many user-level threads mapped to a single kernel thread
+	- Used in user-level threads
+- One-to-One:
+	- Each user thread to a single kernel thread
+	- Used in kernel-level threads
+- Many-to-Many Model
+	- Allows many user level threads to be mapped to many kernel threads
+	- Used in user-level threads
+	- M:N threading models
 

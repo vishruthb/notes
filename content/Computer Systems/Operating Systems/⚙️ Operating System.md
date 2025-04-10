@@ -32,11 +32,6 @@ This happens via events at the user level and through the dispatcher at the kern
 - Use names instead of pointers, such as the integer object handles or descriptors such as the UNIX file descriptors
 # Processes
 - A [[🏠 Process]] is the OS's abstraction for a running program, used to manage execution, scheduling, and other resources. Includes things such as an address space, OS resources and accounting information, and execution state
-- Creating a new process is slow, and communicating between processes is also slow. Processes are supposed to be isolated, and communication is mediated by the OS.
-- Every process thinks it owns the CPU. However, with 1 CPU, all processes share the same physical CPUs, and with multiple CPUs, processes share them as well.
-	- Possible via timer interrupts, data structure to hold execution state while not executing, scheduling policies
-- **Example:** Sequential Process
-	- Everything happens sequentially, one instruction at a time
 # Concurrency
 Multiple tasks in progress at once.
 - Applications benefit from executing several tasks concurrently:
@@ -49,4 +44,4 @@ Multiple tasks in progress at once.
 	- Time: Create data structures, fork and copy address space
 - Cooperating processes share same code and data (address space) and resources (file, sockets, etc.), but have their own execution state (PC, SP, registers)
 # Threads
-[[🧍🏼‍♂️Threads]] are ...
+[[🧍🏼‍♂️Threads]] are sequential execution streams within a process, allowing us to divide a process into smaller, concurrent units of work.
