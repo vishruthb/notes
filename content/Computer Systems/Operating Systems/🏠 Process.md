@@ -1,5 +1,9 @@
+Concept of a process is separate from its execution state:
+- Process: Address space, privileges, resources, etc.
+- Execution state: PC, SP, registers
+Execution state is called [[🧍🏼‍♂️Threads]]
 # Components
-Serves as the OS's container for a program's execution environment, storing all state information for the program:
+Serves as the OS's container for a program's execution environment (an instance of a program in execution), storing all state information for the program:
 - A memory address in space
 - Code and data for the executing program
 - Execution stack encapsulating state of procedure calls
@@ -101,3 +105,10 @@ Process does not need to clean itself up, instead the OS does it because it does
 - `wait()` returns the status code of the child
 - Unix: Every process must be collected by a parent after it finishes executing (and becomes a zombie process)
 - If a parent process exits before its child, the child becomes an orphan
+# Communication Between Processes
+- At process creation time, parents get once chance to pass information via `fork()`
+- OS provides mechanisms for communication
+	- IPC: Inter-Process Communication, typically expensive due to sys calls
+	- Message Passing: Explicit communication via `send()` and `recieve()` sys calls
+	- Files: `read()` and `write()` sys calls
+	- Shared memory for multiple processes that read/write to the same physical portion of memory, sys calls to allocate the shared region (e.g. `shm_open()`)
