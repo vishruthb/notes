@@ -34,7 +34,7 @@ This happens via events at the user level and through the dispatcher at the kern
 - A [[🏠 Process]] is the OS's abstraction for a running program, used to manage execution, scheduling, and other resources. Includes things such as an address space, OS resources and accounting information, and execution state
 # Concurrency
 Multiple tasks in progress at once.
-- Applications benefit from executing several tasks concurrently:
+- Application benefits:
 	- Web Servers -> Handle multiple request simultaneously
 	- Multicore -> Utilize multiple cores with one aplication
 	- Overlapping I/O -> Perform multiple I/O operations in parallel
