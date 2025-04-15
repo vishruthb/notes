@@ -36,4 +36,22 @@ ID apple
 	- Increment: `INC = \n f x -> f (n f x)`
 	- Addition: `ADD = \n m -> n INC m`
 	- Multiplication: `MULT = \n m -> n (ADD m) ZERO`
-- 
+# Examples
+Booleans:
+- `TRUE = \x y -> x`
+- `FALSE = \x y -> y`
+- `ITE = \b x y -> b x y` (if then else)
+Pairs:
+- `PAIR = \x y -> \b -> ITE b x y`
+- `FST p = p TRUE`, `SND p = p FALSE`
+Recursion (Fix-point Combinator):
+- `FIX = \stp -> (\x -> stp (x x)) (\x -> stp (x x))`
+- Allows for self-application that emulates recursion
+
+Example:
+```haskell
+let STEP = \rec -> \n -> ITE (ISZ n) ZERO (ADD n (rec (DEC n)))  
+let SUM = FIX STEP
+
+-- SUM 3 -> 0 + 1 + 2 + 3 (in Church numeral form)
+```
