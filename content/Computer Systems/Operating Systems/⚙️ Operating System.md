@@ -44,4 +44,4 @@ Multiple tasks in progress at once.
 	- Time: Create data structures, fork and copy address space
 - Cooperating processes share same code and data (address space) and resources (file, sockets, etc.), but have their own execution state (PC, SP, registers)
 # Threads
-[[🧍🏼‍♂️Threads]] are sequential execution streams within a process, allowing us to divide a process into smaller, concurrent units of work.
+- [[🧍🏼‍♂️Threads]] are sequential execution streams within a process, allowing us to divide a process into smaller, concurrent units of work.
