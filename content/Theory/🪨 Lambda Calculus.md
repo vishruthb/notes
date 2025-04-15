@@ -53,5 +53,5 @@ Example:
 let STEP = \rec -> \n -> ITE (ISZ n) ZERO (ADD n (rec (DEC n)))  
 let SUM = FIX STEP
 
--- SUM 3 -> 0 + 1 + 2 + 3 (in Church numeral form)
+-- SUM 3 -> 0 + 1 + 2 + 3
 ```
