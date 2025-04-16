@@ -3,28 +3,22 @@
   width: 20px;
   height: 20px;
   margin: 0 10px;
-}
 
-.darkmode > .toggle {
-  display: none;
-  box-sizing: border-box;
-}
+  & > .toggle {
+    display: none;
+    box-sizing: border-box;
+  }
 
-.darkmode svg {
-  cursor: pointer;
-  opacity: 0;
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  top: calc(50% - 10px);
-  transition: opacity 0.1s ease;
-}
-:root[saved-theme="dark"] .darkmode svg {
-  fill: hsl(var(--base-h), var(--base-s), var(--base-d));
-}
-
-:root[saved-theme="light"] .darkmode svg {
-  fill: hsl(var(--base-h), var(--base-s), var(--base-l));
+  & svg {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: calc(50% - 10px);
+    fill: var(--darkgray);
+    transition: opacity 0.1s ease;
+  }
 }
 
 :root[saved-theme="dark"] {
@@ -35,18 +29,20 @@
   color-scheme: light;
 }
 
-:root[saved-theme="dark"] .toggle ~ label #dayIcon {
-  opacity: 0;
+:root[saved-theme="dark"] .toggle ~ label {
+  & > #dayIcon {
+    opacity: 0;
+  }
+  & > #nightIcon {
+    opacity: 1;
+  }
 }
 
-:root[saved-theme="dark"] .toggle ~ label #nightIcon {
-  opacity: 1;
-}
-
-:root[saved-theme="light"] .toggle ~ label #dayIcon {
-  opacity: 1;
-}
-
-:root[saved-theme="light"] .toggle ~ label #nightIcon {
-  opacity: 0;
+:root .toggle ~ label {
+  & > #dayIcon {
+    opacity: 1;
+  }
+  & > #nightIcon {
+    opacity: 0;
+  }
 }
