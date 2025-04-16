@@ -1,5 +1,5 @@
 Hexadecimal (base-16) is used to represent binary numbers in a more human-readable form, grouping 4 bits into a single digit.
-# Theory:
+# Theory
 In hexadecimal:
 - Digits range from 0 to F (where A = 10, B = 11, ..., F = 15).
 - One hexadecimal digit represents four binary digits (bits).

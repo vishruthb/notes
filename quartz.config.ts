@@ -21,9 +21,8 @@ const config: QuartzConfig = {
     theme: {
       cdnCaching: true,
       typography: {
-        // Overriden in custom styling
-        header: "Manrope",
-        body: "Manrope",
+        header: "Inter",
+        body: "Inter",
         code: "Fira Code",
       },
       colors: {
@@ -38,12 +37,12 @@ const config: QuartzConfig = {
           highlight: "rgba(143, 159, 169, 0.15)",
         },
         darkMode: {
-          light: "#161618",
+          light: "#030303",
           lightgray: "#393639",
           gray: "#646464",
           darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7b97aa",
+          dark: "#F1EFEC",
+          secondary: "#D4C9BE",
           tertiary: "#84a59d",
           highlight: "rgba(143, 159, 169, 0.15)",
         },
