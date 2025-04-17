@@ -1,6 +1,5 @@
 # Counting problem++
 Determine the number of ways to choose $r$ elements from $n$ without regard for order.
-
 # Theory:
 The binomial coefficient, often written as $C(n, r)$ or $\binom{n}{r}$, is:
 
