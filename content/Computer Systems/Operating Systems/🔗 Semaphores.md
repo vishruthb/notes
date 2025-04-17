@@ -51,7 +51,7 @@ Each semaphore is associated with a queue of waiting thread.
 `signal()` opens the semaphore:
 - If a thread is waiting on the queue, the thread is unblcooked
 - If no threads are waiting on the queue, the signal is remembered for the next thread
-- Has "history", basically a counter (see [[#Implementation]])
+- Has "history", basically a counter to track surplus signals (i.e. the number of available permits/units of resources to be consumed by future `wait()` calls - see [[#Implementation]])
 # Types
 **Binary Semaphore**
 - Represents access to a single resource
@@ -63,7 +63,7 @@ Each semaphore is associated with a queue of waiting thread.
 - Multiple threads can pass the semaphore at once
 - Number of threads determined by the semaphore "count"
 
-Binary has count $1$, counting has count = $N$
+Binary has count $1$, Counting has count = $N$
 # Semaphores vs. Locks
 Semaphores have a value, enabling more semantics
 - When at most one, can be used for mutual exclusion (only 1 thread in a critical section)
