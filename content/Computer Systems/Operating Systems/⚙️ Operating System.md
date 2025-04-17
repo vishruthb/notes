@@ -33,13 +33,13 @@ This happens via events at the user level and through the dispatcher at the kern
 # Processes
 - A [[🏠 Process]] is the OS's abstraction for a running program, used to manage execution, scheduling, and other resources. Includes things such as an address space, OS resources and accounting information, and execution state
 # Concurrency
-Multiple tasks in progress at once.
+[[🚴‍♂️ Concurrency]] allows for multiple tasks to be in progress at once.
 - Application benefits:
 	- Web Servers -> Handle multiple request simultaneously
 	- Multicore -> Utilize multiple cores with one aplication
 	- Overlapping I/O -> Perform multiple I/O operations in parallel
 - Can use multiple processes by 1) creating several processes (e.g. via `fork()`) and 2) setting up a shared memory region between them
-- Inefficient due to Space and Time
+- Inefficient due to space and time
 	- Space: PCBs, memory-management state (page tables)
 	- Time: Create data structures, fork and copy address space
 - Cooperating processes share same code and data (address space) and resources (file, sockets, etc.), but have their own execution state (PC, SP, registers)

@@ -1,9 +1,7 @@
 # Subarray or Substring Problem
 Given an array, find the maximum (or minimum) value in each subarray of size $k$ as the subarray slides from the beginning to the end of the array.
-
 # Theory
 Maintain data structure (like a deque) to track relevant elements in the current window as it moves across the array.
-
 # Implementation
 ```python
 from collections import deque
@@ -26,7 +24,6 @@ def max_sliding_window(nums, k):
     
     return result
 ```
-
 # Runtime
 Time: $O(n)$
 Space: $O(k)$, where $k$ is the size of the sliding window.

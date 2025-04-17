@@ -16,7 +16,6 @@ def binary_search(arr, target):
             right = mid - 1
     return -1
 ```
-
 # Runtime
 $$O(n\log{n})$$
 With each iteration, binary search reduces the search space by half, leading to a logarithmic time complexity. Space complexity is $\text{O}(1)$. 

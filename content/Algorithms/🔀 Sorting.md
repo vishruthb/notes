@@ -33,7 +33,6 @@ def merge(left, right):
     print(sorted_array + left[left_index:] + right[right_index:])
     return sorted_array + left[left_index:] + right[right_index:]
 ```
-
 # Runtime
 - Time: ${O}(n\log{N})$
 - Space: ${O}(n)$
