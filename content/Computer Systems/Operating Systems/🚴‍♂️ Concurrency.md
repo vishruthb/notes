@@ -58,3 +58,38 @@ Implementation of `acquire`/`release` needs to be atomic, executing as though it
 - Doesn't work on multicore CPUs
 - Should not disable interrupts for long periods of time
 - Can miss or delay important events (e.g. timer, I/O)
+# Implementation
+Implements a lock using a queue to block waiters while using a guard on the lock itself.
+
+```c
+struct lock {
+    bool held = False;
+    bool guard = False;
+    queue Q;
+}
+
+void acquire(lock) {
+    disable interrupts;
+    while (test_and_set( & lock -> guard));
+    if (lock -> held) {
+        put current thread on lock -> Q;
+        lock -> guard = False;
+        block current thread;
+    }
+    lock -> held = True;
+    lock -> guard = False;
+    enable interrupts;
+}
+
+void release(lock) {
+    disable interrupts;
+    while (test_and_set( & lock -> guard));
+    if (lock -> Q is empty)
+        lock -> held = False;
+    else
+        move a waiting thread to the
+    ready queue;
+    lock -> guard = False;
+    enable interrupts;
+}
+```

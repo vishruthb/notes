@@ -1,21 +1,28 @@
 Algorithms let us think about computation independently of the limitations of a computer or programming language.
 
-# Algorithms
-1. [[🔀 Sorting]] allows for sorting elements in a specific order, such as ascending or descending.
-2. [[👉👈 Two Pointers]] involves using two pointers to solve problems efficiently, often in linear time.
-3. [[🪟 Sliding Window]] allows for efficient processing subarrays of fixed length within a larger array.
-4. [[🔍 Binary Search]] is a search algorithm that finds the position of a target value within a sorted array.
-5. [[➕ Prefix Sums]] efficiently calculates the sum of subarrays in an array.
-6. [[♾️ Recursion]] is where a function calls itself to solve a problem by breaking it down into smaller subproblems.
-7. [[💧 Breadth First Search]] is a graph traversal algorithm that explores all the vertices of a graph in breadth-first order.
-8. [[🚟 Depth First Search]] is also a graph traversal algorithm that explores as far as possible along each branch before backtracking.
-9. [[🔄 Dynamic Programming]] is a technique used to solve complex problems by breaking them down into overlapping subproblems.
-
+1. [[🔍 Binary Search]]: efficiently finds a target in a sorted list by halving the search range each step.
+2. [[👉👈 Two Pointers]]: uses two indices moving toward each other (or in tandem) to solve array problems in linear time.
+3. [[🔀 Sorting]]: reorganizes elements into a specified order (e.g. ascending) using algorithms like quicksort or mergesort.
+4. [[🪟 Sliding Window]]: maintains a window over a sequence to compute metrics (sum, max, etc.) for all subarrays of fixed size in $O(n)$.
+5. [[➕ Prefix Sums]]: precomputes cumulative sums, allowing us to query any subarray total in constant time.
+6. [[♾️ Recursion]]: solves problems by having functions call themselves on progressively smaller inputs, often simplifying divide‑and‑conquer.
+7. [[💧 Breadth First Search]]: explores a graph level by level, ideal for finding shortest paths in unweighted graphs.
+8. [[🚟 Depth First Search]]: dives deep along one branch before backtracking, useful for connectivity and topological sort.
+9. [[🔄 Dynamic Programming]]: breaks problems into overlapping subproblems, caching results to avoid redundant work.
+10. [[🗺️ Dijkstra's Algorithm]]: finds shortest paths from a source in a weighted graph (no negative weights) using a priority queue.
+11. [[🚢 Prim's and Kruskal's Algorithm]] greedily builds a minimum spanning tree by selecting the lightest edges without creating cycles.
+12. [[🥽 Union-Find]]: manages disjoint sets with near‑constant time union and find operations (useful for connectivity).
+13. [[🃏 Randomized Search Tree]]: employs randomness to simplify solutions or improve expected performance on average.
 # Data Structures
-1. [[📍 Hashmap]] maps keys to values, allowing for efficient retrieval and insertion operations.
-2. [[🍽️ Stacks]] supports adding and removing elements from one end.
-3. [[🏁 Queues]] supports adding elements to the rear and removing elements from the front.
-4. [[⛓️ Linked List]] is a linear data structure that contains a reference to the next node, forming a sequence.
-5. [[📊 Graphs]] are connected by edges, representing relationships between objects.
-6. [[🌳 Binary Search Tree]] is a binary tree in which every node satisfies the BST property: the value of each node is greater than all values in its left subtree and less than all values in its right subtree.
-7. [[⛰️ Heaps]] are specialized trees that satisfy the heap property, where the parent node is greater than or equal to its children.
+1. [[📍 Hashmap]]: stores key–value pairs for average $O(1)$ lookup, insertion, and deletion.
+2. [[🍽️ Stacks]]: LIFO structure supporting push and pop at one end, handy for backtracking and parsing.
+3. [[🏁 Queues]]: FIFO structure supporting enqueue at rear and dequeue from front, ideal for BFS.
+4. [[⛓️ Linked List]]: sequence of nodes where each node points to the next, allowing $O(1)$ insertion/deletion with a pointer.
+5. [[📊 Graphs]]: models entities (nodes) and their relationships (edges), foundational for network and connectivity problems.
+6. [[🌳 Binary Search Tree]]: binary tree where left child < node < right child, giving $O(\log n)$ search on average.
+7. [[⛰️ Heaps]]: tree‑based priority queue that lets us extract the max (or min) in $O(\log n)$.
+8. [[🔴 Red-Black Tree]]: self‑balancing BST ensuring $O(\log n$) operations by enforcing color and rotation invariants.
+9. [[☮️ AVL Tree]]: height‑balanced BST with strict balance factor, guaranteeing $O(\log n)$ in worst case.
+10. [[🎲 Treap]]: randomized BST combining heap priorities with BST keys to maintain balance probabilistically.
+11. [[📐 K-Dimensional Tree]]: partitions k‑dimensional points recursively, useful for nearest neighbor searches.
+12. [[📂 B-Trees and B+ Trees]]: wide, multi‑way trees optimized for disk and block storage, minimizing I/O operations.

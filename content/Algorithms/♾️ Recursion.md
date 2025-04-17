@@ -2,7 +2,6 @@
 Explore all possible solutions to a problem, such as generating all subsets or permutations, by recursively searching the entire solution space.
 # Theory
  Break down a problem into smaller instances of itself, solving each by calling the function within itself until a base case is met.
-
 # Implementation
 ```python
 def generate_subsets(arr, index=0, current=[]):
@@ -12,7 +11,6 @@ def generate_subsets(arr, index=0, current=[]):
     generate_subsets(arr, index + 1, current + [arr[index]])
     generate_subsets(arr, index + 1, current)
 ```
-
 # Runtime
 Time Complexity: $O(2^n)$
 Space Complexity: $O(n)$
