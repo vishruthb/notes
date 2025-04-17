@@ -32,6 +32,8 @@ This happens via events at the user level and through the dispatcher at the kern
 - Use names instead of pointers, such as the integer object handles or descriptors such as the UNIX file descriptors
 # Processes
 - A [[🏠 Process]] is the OS's abstraction for a running program, used to manage execution, scheduling, and other resources. Includes things such as an address space, OS resources and accounting information, and execution state
+# Threads
+- [[🧍🏼‍♂️Threads]] are sequential execution streams within a process, allowing us to divide a process into smaller, concurrent units of work.
 # Concurrency
 [[🚴‍♂️ Concurrency]] allows for multiple tasks to be in progress at once.
 - Application benefits:
@@ -43,5 +45,10 @@ This happens via events at the user level and through the dispatcher at the kern
 	- Space: PCBs, memory-management state (page tables)
 	- Time: Create data structures, fork and copy address space
 - Cooperating processes share same code and data (address space) and resources (file, sockets, etc.), but have their own execution state (PC, SP, registers)
-# Threads
-- [[🧍🏼‍♂️Threads]] are sequential execution streams within a process, allowing us to divide a process into smaller, concurrent units of work.
+# Synchronization Primitives
+Locks are useful for implementing critical sections, but have limited semantics as they just provide mutual exclusion, which doesn't solve all synchronization problems. Ideally, we'd like to be able to:
+- Wait for shared resources to become available
+- Allow multiple threads to generate different resources
+- Use certain conditions to decide when to enter a critical section
+
+- [[🔗 Semaphores]] allow us to 

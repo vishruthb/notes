@@ -36,8 +36,8 @@ Performance
 - Overhead of entering and exiting the critical section is small, relative to work being done within it
 ### Building Critical Sections
 - Atomic read/write
-- Locks: Primitive minimal semantics, used to build others
-- Semaphores and condition variables: Basic, easy to get the hang of, harder to program with
+- Locks: Primitive minimal semantics, used to build others, provides mutual exclusion
+- [[🔗 Semaphores]] and condition variables: Basic, easy to get the hang of, harder to program with
 - Monitors: High-level, requires language support, implicit operations
 - Messages: atomic transfer of data across a channel => distributed systems
 # Locks
@@ -48,6 +48,11 @@ An object in memory providing two operations:
 Threads pair calls to `acquire` and `release`. Between `acquire`/`release`, the thread holds the lock, and `acquire` does not return until any previous holder releases.
 
 Implementation of `acquire`/`release` needs to be atomic, executing as though it can't be interrupted.
+- Use a queue to block waiters
+- Leave interrupts enabled within critical section
+- Use disabling interrupts and/or spinning only to protect the critical sections within `acquire`/`release`
+
+**Limitation:** Locks don't provide ordering or sequencing.
 ## Spinlocks
 - Threads waiting to acquire lock spin in test-and-set loop
 - Wastes CPU cycles
