@@ -47,4 +47,4 @@ This happens via events at the user level and through the dispatcher at the kern
 - Cooperating processes share same code and data (address space) and resources (file, sockets, etc.), but have their own execution state (PC, SP, registers)
 # Synchronization Primitives
 Locks are useful for implementing critical sections, but have limited semantics as they just provide mutual exclusion, which doesn't solve all synchronization problems. Ideally, we'd like to be able to wait for shared resources to become available, allow multiple threads to generate different resources, and use certain conditions to decide when to enter a critical section.
-- [[🔗 Semaphores]] allow us to keep a count of available “permits,” blocking threads when none remain and waking them as permits are released.
+- [[🔗 Semaphores]] allow us to enforce critical sections via mutual exclusion while enabling coordination between threads via scheduling, helping us solve problems like Producer-Consumer and Reader-Writer
