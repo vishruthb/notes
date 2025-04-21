@@ -56,7 +56,7 @@ Each semaphore is associated with a queue of waiting thread.
 **Binary Semaphore**
 - Represents access to a single resource
 - Guarantees mutual exclusion to a critical section
-- Behaves like a lock
+- Behaves like a lock/mutex
 
 **Counting Semaphore**
 - Represents a resource with many units available
