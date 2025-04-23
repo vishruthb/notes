@@ -9,9 +9,11 @@ Threads can access shared resources (e.g. variables) and data structures (buffer
 - Local variables are **not shared**, as they refer to data on each thread's own stack.
 - Global variables and static objects are **shared**, and are stored in the static data segment accessible by any thread.
 - Dynamic objects and other heap objects are **shared**, as they are allocated from the heap with `malloc/free` or `new/delete`.
+### [[💀 Deadlock]]
+Threads can become stuck in a cycle of resource waits. If each thread holds one lock and waits for another, none can move forward.
 # Synchronization
 A way to control cooperation to restrict the possible interleavings of thread executions.
-- **Mechanisms** to control access to shared resources: locks, mutexes, semaphores, monitors, condition variables, etc.
+- **Mechanisms** to control access to shared resources: locks, mutexes, [[🔗 Semaphores]], [[🖥️ Monitors]], [[🔮 Condition Variables]], etc.
 - **Patterns** for coordinating access to shared resources: producer-consumer, reader-writer, etc.
 # Mutual Exclusion
 Goal is to create **critical sections**.

@@ -1,4 +1,4 @@
-Threads acquiring resources generate dependencies. Locks, semaphores, etc. protect resources, and incorrect use of synchronization can block all threads.
+Deadlocks are one of the fundamental hazards in [[🚴‍♂️ Concurrency]] as threads acquiring resources generate dependencies simultaneously. Locks, semaphores, etc. protect resources, and incorrect use of synchronization can block all threads.
 
 Deadlock is a problem that can arise when:
 - Threads compete for access to limited resources

@@ -8,7 +8,7 @@ Encapsulates:
 Guarantees that threads accessing its data through its procedures interact only in legitimate ways.
 # Semantics
 - Guarantees mutual exclusion, only one thread can execute any monitor procedure at any time (thread is "in the monitor")
-- Threads can use condition variables within a monitor, if a thread blocks within a monitor, another one can enter
+- Threads can use [[🔮 Condition Variables]] within a monitor, if a thread blocks within a monitor, another one can enter
 # Producer-Consumer
 - Locking is implicit, compiler adds the code.
 - Equivalent to each procedure in the monitor calling `acquire()` on entry and `release()` on exit.

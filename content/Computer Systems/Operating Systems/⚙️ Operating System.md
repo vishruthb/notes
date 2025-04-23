@@ -45,6 +45,9 @@ This happens via events at the user level and through the dispatcher at the kern
 	- Space: PCBs, memory-management state (page tables)
 	- Time: Create data structures, fork and copy address space
 - Cooperating processes share same code and data (address space) and resources (file, sockets, etc.), but have their own execution state (PC, SP, registers)
+- [[💀 Deadlock]]s happens when two or more threads each hold one resource and wait indefinitely for the other's.
 # Synchronization Primitives
 Locks are useful for implementing critical sections, but have limited semantics as they just provide mutual exclusion, which doesn't solve all synchronization problems. Ideally, we'd like to be able to wait for shared resources to become available, allow multiple threads to generate different resources, and use certain conditions to decide when to enter a critical section.
 - [[🔗 Semaphores]] allow us to enforce critical sections via mutual exclusion while enabling coordination between threads via scheduling, helping us solve problems like Producer-Consumer and Reader-Writer
+- [[🔮 Condition Variables]] allow a thread to sleep until another signals that a condition is true. Always used with a **lock**.
+- [[🖥️ Monitors]] provide a high-level construct that bundles a mutex and its condition variables into one object.
