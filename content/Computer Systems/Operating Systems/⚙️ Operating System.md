@@ -51,3 +51,5 @@ Locks are useful for implementing critical sections, but have limited semantics 
 - [[🔗 Semaphores]] allow us to enforce critical sections via mutual exclusion while enabling coordination between threads via scheduling, helping us solve problems like Producer-Consumer and Reader-Writer
 - [[🔮 Condition Variables]] allow a thread to sleep until another signals that a condition is true. Always used with a **lock**.
 - [[🖥️ Monitors]] provide a high-level construct that bundles a mutex and its condition variables into one object.
+# CPU Scheduling
+The [[🗓️ Scheduler]] allows for CPU resources to be shared across processes or threads by time-slicing the CPU.

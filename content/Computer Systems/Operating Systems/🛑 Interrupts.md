@@ -14,7 +14,7 @@ Interrupt handler is in the kernel, working by:
 ## Timer
 Prevents programs from hogging the CPU, allowing the OS to always regain control from wrong or malicious programs. Also used for time-based functions like `sleep`.
 
-A fallback mechanism by which the OS reclaims control over the machine. Set to generate an interrupt after a period of time, handled by the kernel which decides which program to run next. Setting the timer is a privileged instruction, and forms the basis for the OS's [[Scheduler]].
+A fallback mechanism by which the OS reclaims control over the machine. Set to generate an interrupt after a period of time, handled by the kernel which decides which program to run next. Setting the timer is a privileged instruction, and forms the basis for the OS's [[🗓️ Scheduler]].
 ## I/O
 Asynchronous I/O
 - OS initiates I/O
