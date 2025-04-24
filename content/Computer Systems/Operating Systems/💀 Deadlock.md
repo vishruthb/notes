@@ -50,7 +50,7 @@ graph LR
 	- If the graph has a cycle, deadlock exists.
 	- Useful for tracking locks.
 # Preventing Deadlocks
-- No mutual exclusion, make resources shareable
+- No mutual exclusion, make resources shareable. This isn't always possible.
 - No hold and wait:
 	- Threads cannot hold one resource while requesting another
 	- Threads try to lock all resources at once at the beginning
@@ -58,10 +58,24 @@ graph LR
 - No circular wait:
 	- Impose an order on all resources, request in order
 	- Popular OS implementation technique when using multiple locks
-# Deadlock Avoidance
-- Avoidance
-	- Specify in advance what resources will be needed by threads
-	- System only grants resources requests if it knows that the process can obtain all resources it needs in future requests
-	- Avoids circularities
+# Avoidance
+- Specify in advance what resources will be needed by threads
+- System only grants resources requests if it knows that the process can obtain all resources it needs in future requests
+- Avoids circular dependencies
 - Banker's Algorithm
+	- Only allocates resources if there is some scheduling order in which every thread can complete
 - Hard to determine all resources needed in advance
+# Detection
+- Traverse the resource graph looking for cycles
+- Expensive, as many threads and resources are needed to traverse
+- Detection algorithm is invoked depending on:
+	- How often or likely the deadlock is
+	- How many threads are likely to be affected when it occurs
+# Recovery
+Once a deadlock is detected, we have two options:
+- **Abort Threads**
+	- Abort all deadlocked threads, threads would need to start over again
+	- Abort one thread at a time until the cycle is elimated, system needs to rerun detection after each abort
+- **Preempt resources** => Force their release
+	- Select thread and resource to preempt
+	- Roll back thread to previous state
