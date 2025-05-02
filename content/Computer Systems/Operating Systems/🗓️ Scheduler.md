@@ -104,6 +104,5 @@ Challenges:
 - Generality; supporting many different kinds of workloads
 
 In Practice:
-- MacOS: Multilevel Feedback Queue
-- Windows: Multilevel Feedback Queue
+- MacOS, Windows: Multilevel Feedback Queue
 - Linux: Completely Fair Scheduler
