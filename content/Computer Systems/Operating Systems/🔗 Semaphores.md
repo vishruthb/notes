@@ -12,7 +12,7 @@ Problem is because producer and consumer can execute at different rates:
 
 **Synchronization** allows us to ensure that concurrent producers and consumers access the buffer in a *correct way*.
 # Theory
-Semaphores are a synchronization variable that tkaes on non-negative integer values, and supports two operations:
+Semaphores are a synchronization variable that takes on non-negative integer values, and supports two operations:
 - `wait()`: An atomic operation that waits for the semaphore to become greater than 0, then decrements it by 1
 - `signal()`: An atomic operation that increments the semaphore by 1
 - Initialize the semaphore to some value
