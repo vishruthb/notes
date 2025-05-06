@@ -1,0 +1,12 @@
+Theory explores the mathematical ideas that let us define, reason about, and reuse computer programs.
+- [[🪨 Lambda Calculus]] serves as the logic that forms the core of computation.
+- [[🌿 Haskell]] is a typed, lazy, purely functional $\lambda$‑calculus with syntax, types, and a rich standard library.
+	- [[✏️ Syntax & Equations]] involve function equations, patterns, guards, `where`/`let` scope.
+	- [[🛡️ Type System]] allows for polymorphism, type annotations, type inference, etc.
+	- [[🔄 Recursion & Pattern Matching]] involves structural recursion, mutual recursion, and tail recursion.
+	- [[📜 Lists & Comprehensions]] give us built‑in list syntax, ranges, comprehensions, library helpers.
+- [[🌲 Algebraic Data Types]] are user‑defined product, sum, recursive and polymorphic types that include tuples & lists.
+    - [[📦 Product Types]] include “and” data (records/tuples), pattern matching, and field labels.
+    - [[🔀 Sum Types]] cover “either/or” data, tagged unions, exhaustive case analysis.
+    - [[🌳 Recursive Types]] cover lists, trees, and structural induction.
+    - [[🌀 Polymorphic Data]] covers type constructors & parametric data (e.g. `List a`, `Tree a`).
