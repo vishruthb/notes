@@ -75,7 +75,7 @@ Makes concurrency much cheaper than processes, much less state to allocate and i
 - Thread operations still require sys calls
 - Have to be general to support languages, runtimes, etc.
 # User-Level Threads
-Threads that are managed entirely by a runtie system (user-level library).
+Threads that are managed entirely by a runtime system (user-level library).
 - Small and fast, represented by a PC, registers, stack, and small TCB
 - Creating a new thread, switching between threads, and synchronizing threads are done via procedure calls
 - User-level thread operations 10-100x faster than kernel threads
