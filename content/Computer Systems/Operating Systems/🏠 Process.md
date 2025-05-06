@@ -30,7 +30,7 @@ Process moves from state to state as it executes.
 A *heavyweight abstraction* that tracks the many processes running simultaneously, providing a way for the OS to represent a process in the kernel:
 - Contains all the info about a process
 - Memory management information
-- Scheduling an execution information
+- Scheduling and execution information
 - I/O and file management
 # Process Creation
 Every process is created by another process.

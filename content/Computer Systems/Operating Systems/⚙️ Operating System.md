@@ -2,7 +2,7 @@ An operating system (OS) sits between applications and hardware, providing abstr
 # OS & Hardware
 - Resource allocation
 - Resource reclamation
-- Protection (between & from applications)
+- Protection (between & from applications) and interactions rely on hardware support
 # OS & Applications
 - The OS defines a set of logical resources (objects) and a set of well-defined operations on these objects (interfaces)
 	- Files: Create, read, write
