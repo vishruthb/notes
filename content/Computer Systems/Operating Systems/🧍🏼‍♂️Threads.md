@@ -97,4 +97,8 @@ Invisible to the OS -> OS can make poor decisions:
 	- Allows many user level threads to be mapped to many kernel threads
 	- Used in user-level threads
 	- M:N threading models
-
+# Controlling Execution
+- `sleep()`: Moves the thread to the waiting/blocked state, usually waiting for a condition or resource
+- `yield()`: Voluntarily gives up the CPU, placing the thread back on the ready queue
+- `finish()`: Signals that a thread is done executing, allowing for cleanup
+- `join()`: Blocks the calling thread until another specified thread finishes
