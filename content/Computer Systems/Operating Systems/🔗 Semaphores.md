@@ -49,7 +49,7 @@ Each semaphore is associated with a queue of waiting thread.
 - If a semaphore is open (positive), thread continues
 - If a semaphore is closed (non-positive), thread blocks on queue
 `signal()` opens the semaphore:
-- If a thread is waiting on the queue, the thread is unblcooked
+- If a thread is waiting on the queue, the thread is unblocked
 - If no threads are waiting on the queue, the signal is remembered for the next thread
 - Has "history", basically a counter to track surplus signals (i.e. the number of available permits/units of resources to be consumed by future `wait()` calls - see [[#Implementation]])
 # Types
@@ -69,9 +69,11 @@ Semaphores have a value, enabling more semantics
 - When at most one, can be used for mutual exclusion (only 1 thread in a critical section)
 - When > 1, can allow multiple threads to access resources
 
+Essentially, locks only provide mutual exclusion while semaphores can provide mutex **and** coordination, have a counting value, and can remember past signals (unlike [[🔮 Condition Variables]]).
+
 **Use Cases:**
 - Mutual exclusion - Only 1 thread accessing a resource at a time
-- Event sequencing - Permit threads to wait for certain things to happen
+- Event sequencing / thread coordination - Permit threads to wait for certain things to happen
 # Producer-Consumer with Semaphores
 - `signal(s)` increments s
 	- `s` value is how  many items have been produced
@@ -83,6 +85,8 @@ Constraints:
 - Only one thread can manipulate the buffer at once
 
 We use a semaphore for first two constraints (`full_count` and `empty_count`), and a lock/semaphore for the third.
+
+We call `wait(empty)` before producing, `wait(mutex)` to enter the critical section, `signal(mutex)` after exiting the critical section, and `signal(full)` to notify consumers.
 # Readers-Writers Problem
 An object is shared among several threads. Some threads only read the object, others only write it. We can allow multiple readers, but only one writer.
 
@@ -166,3 +170,8 @@ void signal(semaphore *s) {
     enable_interrupts();
 }
 ```
+# Test-and-Set
+An atomic hardware instruction that:
+1) Reads the current value of a lock variable
+2) Sets it to 'locked' (true)
+3) Returns the previous value

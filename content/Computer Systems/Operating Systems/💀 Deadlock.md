@@ -14,7 +14,7 @@ Deadlock can exist iff the following conditions hold **simultaneously**:
 
 Eliminating any of these conditions eliminates deadlock.
 # Resource Allocation Graph
-Allows us to illustrate deadlock.
+Allows us to illustrate deadlocks.
 
 ---
 Thread A holds resource R:
@@ -58,6 +58,13 @@ graph LR
 - No circular wait:
 	- Impose an order on all resources, request in order
 	- Popular OS implementation technique when using multiple locks
+#### Ostrich Algorithm
+Just assume the deadlock won't happen. :)
+
+Used in systems like Unix because:
+- Deadlocks are rare
+- Detection/recovery is expensive or complex
+- Easier to just restart the affected processes if needed.
 # Avoidance
 - Specify in advance what resources will be needed by threads
 - System only grants resources requests if it knows that the process can obtain all resources it needs in future requests
