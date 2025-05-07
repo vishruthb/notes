@@ -86,7 +86,7 @@ while (1) {
 - **Does not create a new process**, just replaces current process's memory image with a new program (new code, data, stack, etc. but same PID and key attributes)
 Returns only if failed with an error code.
 
-`fork()` creates a new process, and `ecex()` in that child process loads the new program.
+`fork()` creates a new process, and `exec()` in that child process loads the new program.
 # Process Termination
 - Unix: `exit(int status)`
 - Windows: `ExitProcess(int status)`
