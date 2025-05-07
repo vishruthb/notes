@@ -17,7 +17,7 @@ Eliminating any of these conditions eliminates deadlock.
 Allows us to illustrate deadlocks.
 
 ---
-Thread A holds resource R:
+Thread A holds resource R (allocation edge):
 ```mermaid
 graph RL
   R[R]
@@ -25,7 +25,7 @@ graph RL
   R --holds--> A
 ```
 
-Thread B requests resource S
+Thread B requests resource S (request edge):
 ```mermaid
 graph LR
   R[S]
@@ -33,7 +33,8 @@ graph LR
   A --requests--> R
 ```
 ---
-If the graph has a cycle, then a deadlock may exist. If no cycles, no deadlock.
+>[!Important]
+>If the graph has a cycle, then a deadlock may exist. If no cycles, no deadlock.
 
 Example: Thread 1 holds Lock 1, Thread 2 holds Lock 2, Each requests the others' lock
 ```mermaid
