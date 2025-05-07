@@ -7,4 +7,4 @@ Currently, I've written about [[🌲 Algorithms]], [[🌷 Computer Systems]], [[
 
 My interests are primarily in **machine learning** {infrastructure, model training and reasoning, inference acceleration, runtime optimization}, **systems** {distributed systems, architecture}, and **compilers** {optimization passes, code generation}. 
 
-Feel free to reach out if you'd like to chat or collaborate via <a href="https://vishruthb.github.io/" target="_blank">https://vishruthb.github.io/</a>
+Feel free to reach out if you'd like to chat or collaborate via [email](mailto:vishruth@ucsd.edu) or [twitter](https://twitter.com/vishruthb5).
