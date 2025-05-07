@@ -106,3 +106,11 @@ Challenges:
 In Practice:
 - MacOS, Windows: Multilevel Feedback Queue
 - Linux: Completely Fair Scheduler
+### Application Goals
+- Batch applications
+	- ML training, simulations, etc.
+	- Care about high throughput and low turnaround time
+- Interactive applications
+	- Browser, Zoom, etc.
+	- Care about low response time
+- All applications want high CPU utilization and fairness to avoid **starvation**
