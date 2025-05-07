@@ -71,7 +71,7 @@ Used in systems like Unix because:
 - System only grants resources requests if it knows that the process can obtain all resources it needs in future requests
 - Avoids circular dependencies
 - Banker's Algorithm
-	- Only allocates resources if there is some scheduling order in which every thread can complete
+	- Only allocates resources if there is some scheduling order in which every thread can complete – the resulting state is safe
 - Hard to determine all resources needed in advance
 # Detection
 - Traverse the resource graph looking for cycles

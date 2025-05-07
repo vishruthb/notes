@@ -1,7 +1,7 @@
 Threads cooperate in multithreaded programs in order to share resources, access data structures like a memory cache in a webs server, and to coordinate their execution (relative execution). With multiple cooperating threads, we have non-deterministic results and scheduling order **does** matter.
 # Problems
 ### Race Conditions
-Results depend on the timing execution of the code.
+Results depend on the timing execution of the code. Will only sometimes result in data corruption or some other incorrect behavior.
 ### Interleaved Executions
 Threads interleave executions arbitrarily and at different rates, and scheduling is not under program control.
 ### Shared Resources
