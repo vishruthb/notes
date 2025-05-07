@@ -5,6 +5,6 @@ Hello! This is my collection of notes that I've organized into concise, informat
 
 Currently, I've written about [[🌲 Algorithms]], [[🌷 Computer Systems]], [[🎒 Mathematics]], and [[🔦 Theory]] {currently: functional programming, interpreters, programming languages}.
 
-My interests are primarily in machine learning {infrastructure, model training and reasoning, inference acceleration, runtime optimization}, systems {distributed systems, architecture}, and compilers {optimization passes, code generation}. 
+My interests are primarily in **machine learning** {infrastructure, model training and reasoning, inference acceleration, runtime optimization}, **systems** {distributed systems, architecture}, and **compilers** {optimization passes, code generation}. 
 
-Feel free to reach out if you'd like to chat or discuss projects - [https://vishruthb.github.io/](https://vishruthb.github.io/)!
+Feel free to reach out if you'd like to chat or collaborate - [https://vishruthb.github.io/](https://vishruthb.github.io/)
