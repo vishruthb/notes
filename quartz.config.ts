@@ -21,9 +21,9 @@ const config: QuartzConfig = {
     theme: {
       cdnCaching: true,
       typography: {
-        header: "Inter",
-        body: "Inter",
-        code: "Fira Code",
+        header: "Computer Modern Serif",
+        body: "Computer Modern Serif",
+        code: "Computer Modern Typewriter",
       },
       colors: {
         lightMode: {
@@ -72,7 +72,7 @@ const config: QuartzConfig = {
     filters: [Plugin.RemoveDrafts()],
     emitters: [
       Plugin.AliasRedirects(),
-      Plugin.ComponentResources({ fontOrigin: "googleFonts" }),
+      Plugin.ComponentResources({ fontOrigin: "local" }),
       Plugin.ContentPage(),
       Plugin.FolderPage(),
       Plugin.TagPage(),
