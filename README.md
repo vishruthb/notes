@@ -1,4 +1,4 @@
-# Vishruth's Notes
+# Notes
 
 Working notes on various topics ranging from algorithms, computer systems, theory, and mathematics.
 
