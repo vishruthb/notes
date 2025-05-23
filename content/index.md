@@ -1,7 +1,7 @@
 ---
 title: Welcome 👋
 ---
-Hello! This is my collection of notes that I've organized into concise, informational topic pages.
+Hello! I'm Vishruth, and this is my collection of notes that I've organized into concise, informational topic pages.
 
 Currently, I've written about [[🌲 Algorithms]], [[🌷 Computer Systems]], [[🎒 Mathematics]], and [[🔦 Theory]] {functional programming, interpreters, programming languages}.
 
