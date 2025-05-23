@@ -21,7 +21,7 @@ OS uses:
 - [[🧠 Memory Protections]]
 to protect itself from applications and protect applications from each other, while still performing special tasks like managing resources
 # Interactions
-OS is a giant interrupt handler, once the system is booted up, all entries to the kernel occurs due to [[🎡 Events]] such as:
+OS is essentially a giant interrupt handler, so once the system is booted up, all entries to the kernel occurs due to [[🎡 Events]] such as:
 - [[💥 Faults]]
 - [[📞 System Calls]]
 - Timer and I/O [[🛑 Interrupts]]
