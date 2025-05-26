@@ -13,7 +13,7 @@ An operating system (OS) sits between applications and hardware, providing abstr
 - Application, Libraries
 - Run in user mode, **cannot execute privileged instructions**
 ## Kernel Level:
-- Portable OS layer, Machine-dependent layer
+- Portable OS layer & Machine-dependent layer
 - Run in kernel mode, **can execute privileged instructions**
 # Protections
 OS uses:
