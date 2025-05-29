@@ -53,3 +53,5 @@ Locks are useful for implementing critical sections, but have limited semantics 
 - [[🖥️ Monitors]] provide a high-level construct that bundles a mutex and its condition variables into one object.
 # CPU Scheduling
 The [[🗓️ Scheduler]] allows for CPU resources to be shared across processes or threads by time-slicing the CPU.
+# Managing Memory
+[[🍎 Memory Management]] allows us to share the memory on one server amongst many processes.
