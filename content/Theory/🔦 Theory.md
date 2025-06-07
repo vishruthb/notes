@@ -17,4 +17,5 @@ Theory explores the mathematical ideas that let us define, reason about, and reu
 	- [[➡️ Function Combinators]] such as `flip`, `(.)` provide eta‑conversion & point‑free style.
 - [[🔒 Closures]] are the key mechanism that enforces static scoping.
 - [[🎛️ Type Classes]] enable ad-hoc polymorphism.
-- [[P]]
+- [[📜 Parsers]] convert raw input into a structured value like an AST.
+- [[🌀 Monads]] are maps that provide rules to pass from any type to another.
