@@ -28,3 +28,6 @@ Allows for:
 - Transparency: Hardware handles address translation
 - Protection: Can check for isolation during translation
 - Efficiency in memory usage
+# Multi-Level vs. Linear
+Allows for allocation of page-table pages for regions of the address space actually being used, instead of one huge table that covers the entire 4 GB (on 32 bit) or larger space. Sparsity => Saves RAM at the cost of one extra memory indirection on a [[Translation Lookaside Buffer]] miss.
+
