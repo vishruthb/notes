@@ -17,3 +17,6 @@ Goals of memory management include multitasking, transparency, isolation (protec
 - Change address **dynamically** as a process executes
 - Virtual addresses are independent of physical location of referenced data, are used to refer to memory locations, and are translated to **physical addresses** during every memory reference
 - OS makes decision on where to place data in **physical memory**
+# Virtual Memory
+The abstraction that the OS provides for managing memory. Has two views of memory, **physical address space** and **virtual address space** (seen by the program).
+
