@@ -20,3 +20,11 @@ Goals of memory management include multitasking, transparency, isolation (protec
 # Virtual Memory
 The abstraction that the OS provides for managing memory. Has two views of memory, **physical address space** and **virtual address space** (seen by the program).
 
+>[!Note]
+> Virtual address space often much larger than physical adddress space (64-bit addresses)
+
+Allows for:
+- Flexibility: OS can move processes around in memory as they execute
+- Transparency: Hardware handles address translation
+- Protection: Can check for isolation during translation
+- Efficiency in memory usage
