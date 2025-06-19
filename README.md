@@ -1,4 +1,4 @@
-# Notes
+# vishruth's notes
 
 Working bite-sized notes on various topics ranging from algorithms, operating systems, theory, and mathematics.
 
