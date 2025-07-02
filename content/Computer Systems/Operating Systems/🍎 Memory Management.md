@@ -7,7 +7,7 @@ Goals of memory management include multitasking, transparency, isolation (protec
 # Multitasking
 ### w/ Static Relocation
 - Support multiple processes by relocating once at load time
-- Highest memory holds the OS, so when a process is loaded, a region of memory is allocated, and the loader rewrites all memory addresses to relcoate the process
+- Highest memory holds the OS, so when a process is loaded, a region of memory is allocated, and the loader rewrites all memory addresses to relocate the process
 - Limitations:
 	- N protection between **processes** or of **operating system**
 	- Low memory utilization, as addresses are fixed after loading => cannot relocate at runtime to fill holes
