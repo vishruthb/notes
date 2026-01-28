@@ -1,10 +1,8 @@
 ---
 title: Welcome 👋
 ---
-Hello! I'm Vishruth, and this is my collection of notes that I've organized into concise, informational topic pages.
+I'm Vishruth, a CS student at UC San Diego. This is my growing collection of notes over the years, primarily revolving around my interests in reinforcement learning, robotics, and the ML acceleration stack.
 
-Currently, I've written about [[🌲 Algorithms]], [[🌷 Computer Systems]], [[🎒 Mathematics]], and [[🔦 Theory]] {functional programming, interpreters, programming languages}.
-
-My interests are primarily in **machine learning** {infrastructure, model training and reasoning, inference acceleration, runtime optimization}, **systems** {distributed systems, architecture}, and **compilers** {optimization passes, code generation}. 
+At a high level, I've written about [[🌲 Algorithms]], [[🌷 Computer Systems]], [[🎒 Mathematics]], and a bit of [[🔦 Theory]].
 
 Feel free to reach out if you'd like to chat or collaborate via [email](mailto:vishruth@ucsd.edu) or [twitter](https://x.com/vishruthbh).
