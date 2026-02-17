@@ -1,3 +1,2 @@
-Computer systems is the study of how hardware and software work together to execute programs reliably and efficiently.
-- [[🏛️ Computer Architecture]] allows us to design and analyze the structure of processors, memory hierarchies, etc.
-- [[⚙️ Operating System]]s provide the software layer that manages resources, enforces isolation, schedules concurrent tasks, and offers abstractions like threads and files so programs can run safely and in parallel.
+Computer systems allow us to understand how hardware and software work together to execute programs reliably and efficiently.
+- The [[⚙️ Operating System]] provides the software layer that manages resources, enforces isolation, schedules concurrent tasks, and offers abstractions like threads and files so programs can run safely and in parallel.
