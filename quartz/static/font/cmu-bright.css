@@ -1,0 +1,37 @@
+/* CMU Bright (webfont via local TTFs)
+ *
+ * Source files copied from: ~/Downloads/cmu-bright/
+ */
+
+@font-face {
+  font-family: "CMU Bright";
+  src: url("cmunbmr.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CMU Bright";
+  src: url("cmunbmo.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CMU Bright";
+  src: url("cmunbtl.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CMU Bright";
+  src: url("cmunbto.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
