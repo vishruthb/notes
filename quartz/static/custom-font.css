@@ -3,7 +3,7 @@
 @import "./font/cmu-bright.css";
 
 :root {
-    --headerFont: "CMU Bright", "Computer Modern Serif", serif !important;
-    --bodyFont: "CMU Bright", "Computer Modern Serif", serif !important;
+    --headerFont: "Computer Modern Serif", serif !important;
+    --bodyFont: "Computer Modern Serif", serif !important;
     --codeFont: "Computer Modern Typewriter", monospace !important;
 } 

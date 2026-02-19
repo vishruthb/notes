@@ -5,11 +5,11 @@ where $f$ is continuous, differentiable, etc.
 
 **Linear Regression**
 
-**Logistic Regression**
+[[☝️Logistic Regression]]
 
 Properties of Convex Functions
 
-**Gradient Descent** <- maybe make this a separate page
+[[Gradient Descent]]
 
 Backtracking Line Search
 
@@ -17,6 +17,6 @@ Subgradients
 
 Stochastic Gradient Descent
 
-Strong convexity
+Strong Convexity
 
 Constrained Optimization

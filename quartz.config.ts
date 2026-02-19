@@ -21,8 +21,8 @@ const config: QuartzConfig = {
     theme: {
       cdnCaching: true,
       typography: {
-        header: "CMU Bright",
-        body: "CMU Bright",
+        header: "Computer Modern Serif",
+        body: "Computer Modern Serif",
         code: "Computer Modern Typewriter",
       },
       colors: {
