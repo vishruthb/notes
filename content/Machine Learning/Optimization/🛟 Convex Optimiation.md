@@ -5,7 +5,7 @@ where $f$ is continuous, differentiable, etc.
 
 **Linear Regression**
 
-[[☝️Logistic Regression]]
+[[☝️ Logistic Regression]]
 
 Properties of Convex Functions
 
