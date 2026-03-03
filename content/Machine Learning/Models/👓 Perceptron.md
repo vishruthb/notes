@@ -11,6 +11,7 @@ At a high level, the algorithm looks something like:
 This theorem tells us how quickly the perceptron converges when the data is separable. It's stated in terms of two key quantities:
 - $R = \max_i ||x^i||$, the radius of the data/norm of farthest point from origin
 - $\gamma$, the margin or how easily separable the data is
+
 Assuming there exists a unit vector $w^*$ with $||w^*||=1$ such that every training point satisfies $y^i(w*x^i + b) \geq \gamma$ for some $\gamma>0$, then **the number of mistakes that the perceptron makes is $\leq \frac{R^2}{\gamma^2}$**. Uniform scaling doesn't change this bound. Adding a single new point with a very large norm can increase $R$ without changing $\gamma$, which does increase the bound.
 # Multiclass
 Going beyond binary labels $\{-1, +1\}$, multiclass perceptrons deal with $k$ classes $\{1, 2, ..., k\}$. Instead of just one weight vector, we have one weight vector **per class** $w_1,...w_k$ and biases $b_1,...,b_k$. Each class $j$ has a score for a point $x$, calculated via $\text{score}_j(x) = w_j * x + b_j$ .
