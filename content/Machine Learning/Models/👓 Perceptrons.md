@@ -1,0 +1,1 @@
+Usable when data is linearly separable.
