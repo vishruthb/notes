@@ -16,7 +16,7 @@ Unfortunately, hard-margin SVM works only on linearly separable data, and in mos
 
 The core optimization problem can be formalized as:
 
-$$\min_{\mathbf{w}, b, \boldsymbol{\xi}} \|\mathbf{w}\|^2 + C \sum_{i=1}^{n} \xi_i \qquad \text{s.t.} \quad y^{(i)}(\mathbf{w} \cdot \mathbf{x}^{(i)} + b) \geq 1 - \xi_i, \quad \xi_i \geq 0 \;\; \forall\, i$$
+$$\min_{w, b, \boldsymbol{\xi}} \|w\|^2 + C \sum_{i=1}^{n} \xi_i \qquad \text{s.t.} \quad y^{(i)}(w \cdot \mathbf{x}^{(i)} + b) \geq 1 - \xi_i, \quad \xi_i \geq 0 \;\; \forall\, i$$
 
 The slack $\xi_i$ relaxes the constraint, but we still pay for it since the objective function includes a penalty $C$, which is the slack penalty weight. Having $C$ allows us to be more or less lenient with allowing data points to cross the margin or decision boundary, and it's generally chosen using cross-validation.
 
