@@ -22,7 +22,9 @@ $$\hat{y} = \text{argmax}_j(w_j*x+b_j)$$
 When a point $(x, y)$ with true label $y$ is misclassified as $\hat{y}$, we boost the correct class via:
 - $w_y \leftarrow w_y + x$
 - $b_y \leftarrow b_y + 1$
+
 And penalize the wrong prediction:
 - $w_\hat{y} \leftarrow w_\hat{y} - x$
 - $b_\hat{y} \leftarrow b_\hat{y} - 1$
+
 While keeping all the other $k-2$ weight vectors unchanged.
