@@ -1,4 +1,4 @@
-If the data is linearly separable, there are infinitely many valid separators. The issue is that [[👓 Perceptrons]] just stumble onto whichever one its update path leads to, which isn't optimal.
+If the data is linearly separable, there are infinitely many valid separators. The issue is that a [[👓 Perceptron]] just stumbles onto whichever one its update path leads to, which isn't optimal.
 # Support Vectors
 The training points that sit right on the margin boundary, or the points where $y^i(w*x^i + b) = 1$ exactly. These are the points important for defining the boundary. The solution takes the form:
 
