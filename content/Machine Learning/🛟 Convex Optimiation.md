@@ -20,3 +20,5 @@ Stochastic Gradient Descent
 Strong Convexity
 
 Constrained Optimization
+
+TODO + split up into separate pages
