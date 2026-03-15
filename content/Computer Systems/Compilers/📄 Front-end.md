@@ -59,4 +59,4 @@ Now, all we need to do is just fill in the LL(1) table. For each rule A -> a, we
 > [!Important]
 > A grammar is LL(1) iff no cell in this table has more than one rule. If two rules for the same nonterminal have overlapping FIRST+ sets, we have a conflict and the grammar is LL(1).
 
-The skeleton parser uses this table with a stack, pushing EOF then the start symbol. It loops IF the top-of-stack is a terminal, matching it with current input and pop. IF it is a nonterminal, we look up TABLE[TOS, curr_word], pop TOS, and push the RHS in reverse order. It's done when both stack + input are EOF.
+The skeleton parser uses this table with a stack, pushing EOF then the start symbol. It loops IF the top-of-stack is a terminal, matching it with current input and pop. IF it is a nonterminal, we look up `TABLE[TOS, curr_word]`, pop TOS, and push the RHS in reverse order. It's done when both stack + input are EOF.
