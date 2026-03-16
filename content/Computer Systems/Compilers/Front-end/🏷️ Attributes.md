@@ -1,11 +1,9 @@
 Attribute grammars let us attach computations to the parse tree created in the [[📄 Parsing]] stage to handle semantic analysis, which can be used to catch things like "variable used before declaration" or "type mismatch in assignment".
 
 Essentially, we take a CFG and attach attributes (named values) to each node in the parse tree + rules that define how to compute those attributes. These rules are tied to productions.
-
 # Types of Attributes
 - Synthesized attributes: flow upward in the parse tree, where parent's attribute are computed from children's attribute.
 - Inherited attributes: flow downward in the parse tree, where a child's attribute is computed from its parent or siblings.
-
 # Example
 Consider this grammar for simple addition expressions.
 ```
