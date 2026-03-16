@@ -1,7 +1,3 @@
-- scanner, regex
-- parsing, cfgs, ll parsers
-- semantics analysis (attribute grammars)
-
 A parser's job is to take a stream of tokens from the scanner and determine if they form a valid program according to the grammar's rules. An LL(1) parser does this top-down, left-to-right, using **1 token of lookahead**. In order to build an LL(1) parser, we need a parsing table that tells us which production rule to use given a nonterminal $A$ and the next token $x$. 
 
 This process can be formalized into 3 steps.
