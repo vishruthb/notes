@@ -12,7 +12,6 @@ Use the critical path as priority, where a higher critical path means higher pri
 - Pick the ready instruction with the highest critical path
 - Issue it and add to the active list
 - If nothing is ready, stall (insert nop)
-
 # Example
 ```
 A: loadI 5 → r1       (latency 1)
