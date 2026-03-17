@@ -28,7 +28,7 @@ FOLLOW(X) sets tell us what terminals can appear immediately after X in any deri
 - If there's a production A -> a B b, add FIRST(b) minus e to FOLLOW(B)
 - If there's a production A -> a B or A -> a B b where e $\in$ FIRST(b), we add FOLLOW(A) to FOLLOW(B)
 
-From the above example, we can start with FOLLOW(S) = {eof}, as its the start symbol. We then go to S -> A z. FOLLOW(A) gets FIRST(Z) = {z}, so FOLLOW(A) = {z}. Next is A -> B D, FOLLOW(B) gets FIRST(D), giving us FOLLOW(B) = {y, e}. Since D can be e, FOLLOW(B) also gets FOLLOW(A) = {z}, so FOLLOW(B) = {y, z}. Lastly, A -> B D, FOLLOW(D) gets FOLLOW(A) = {z}, so FOLLOW(D) = {z}.
+From the above example, we can start with FOLLOW(S) = {eof}, as its the start symbol. We then go to S -> A z. FOLLOW(A) gets FIRST(Z) = {z}, so FOLLOW(A) = {z}. Next is A -> B D, FOLLOW(B) gets FIRST(D), giving us FOLLOW(B) = {y}. Since D can be e, FOLLOW(B) also gets FOLLOW(A) = {z}, so FOLLOW(B) = {y, z}. Lastly, in A -> B D, FOLLOW(D) gets FOLLOW(A) = {z}, so FOLLOW(D) = {z}.
 
 ### 3. Compute FIRST+ sets per production rule
 This is what actually goes in the table.
