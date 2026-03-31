@@ -2,7 +2,6 @@
 Objects are arranged linearly. Unlike an array, order in a linked list is determined by a pointer in each object. Elements contain keys that can be searched for, providing simple, flexible representation for dynamic sets.
 
 A **singly linked list** only has a `next` pointer. A **doubly linked list** has elements with an attribute `key` and two pointer attributes: `next` and `prev`. In **circular** list, the `prev` pointer of the head points to the `tail`, and the `next`  pointer of the tail points to the head.
-
 # Implementation
 ```python
 class ListNode:
@@ -41,7 +40,6 @@ class LinkedList:
         if x.next is not None:
             x.next.prev = x.prev
 ```
-
 # Runtime
 - `search`: $O(n)$ in the worst case, since it may have to search the entire list.
 - `prepend`: $O(1)$ on a list of $n$ elements.

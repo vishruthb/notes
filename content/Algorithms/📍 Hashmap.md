@@ -2,7 +2,6 @@
 Maintain a set of key-value pairs with quick insertion, removal, and retrieval.
 # Theory
 Are data structures indexed through **key-value pairs** with quick retrieval, insertion, and deletion. To handle collisions, we can use **chaining** (where each slot holds a list of items that hashed to the same slot) or **open addressing** (where a collision triggers a sequence to find an empty slot).
-
 # Implementation
 ```python
 class Node:
@@ -94,6 +93,5 @@ class HashTable:
         
         self.table = new_table
 ```
-
 # Runtime
 All operations in the best case are $O(1)$ when there are no collisions, or if the resolution is efficient. 

@@ -1,9 +1,7 @@
 # Shortest Path Problem
 Visit each vertex connected to a source node in a graph, finding the shortest path from the source to all other nodes in an unweighted graph.
-
 # Theory
 Use a queue to explore vertices level by level, ensuring that the shortest path to each vertex is found by processing nodes in ascending distance order.
-
 # Implementation
 ```python
 # adjacency list
@@ -44,7 +42,6 @@ def bfs(grid):
                 visit.add((r + dr, c + dc))
         length += 1
 ```
-
 # Runtime
 $$O(V+E)$$
 BFS visits each vertex and edge exactly once, resulting in a linear time complexity relative to the number of vertices $V$ and edges $E$. Space complexity is $O(V)$ due to the queue and distance dictionary.
