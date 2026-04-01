@@ -1,4 +1,83 @@
 @charset "utf-8";
 @use "./base.scss";
+@use "./variables.scss" as *;
 
-// put your custom CSS here!
+body,
+section {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+tbody,
+li,
+p {
+  line-height: 1.72;
+}
+
+a {
+  transition: color 0.18s ease;
+
+  &:hover {
+    color: color-mix(in srgb, var(--secondary) 70%, transparent);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
+.page-title {
+  font-size: 1.75rem;
+
+  a {
+    color: color-mix(in srgb, var(--darkgray) 70%, transparent);
+    font-weight: 400;
+    transition: color 0.18s ease;
+
+    &:hover {
+      color: var(--darkgray);
+    }
+  }
+}
+
+#explorer-content {
+  ul li > a {
+    font-size: 1.05rem;
+  }
+}
+
+.folder-container {
+  div > a,
+  div > button span {
+    font-size: 1.05rem !important;
+  }
+}
+
+button#explorer h1 {
+  font-size: 1.05rem;
+}
+
+.content-meta {
+  font-family: var(--metaFont);
+  font-size: 0.82em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+footer {
+  font-family: var(--metaFont);
+  font-size: 0.82em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  a {
+    font-family: var(--metaFont);
+  }
+}

@@ -25,10 +25,6 @@ section {
   border-radius: 5px;
 }
 
-::selection {
-  background: color-mix(in srgb, var(--tertiary) 60%, rgba(255, 255, 255, 0));
-  color: var(--darkgray);
-}
 
 p,
 ul,
@@ -60,11 +56,11 @@ strong {
 a {
   font-weight: $semiBoldWeight;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.18s ease;
   color: var(--secondary);
 
   &:hover {
-    color: var(--tertiary) !important;
+    color: color-mix(in srgb, var(--secondary) 70%, transparent);
   }
 
   &.internal {
