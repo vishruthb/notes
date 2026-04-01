@@ -6,12 +6,17 @@ import { i18n } from "../i18n"
 
 interface ContentMetaOptions {
   /**
+   * Whether to display publish/modified date
+   */
+  showDate: boolean
+  /**
    * Whether to display reading time
    */
   showReadingTime: boolean
 }
 
 const defaultOptions: ContentMetaOptions = {
+  showDate: false,
   showReadingTime: true,
 }
 
@@ -25,7 +30,7 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
     if (text) {
       const segments: string[] = []
 
-      if (fileData.dates) {
+      if (options.showDate && fileData.dates) {
         segments.push(formatDate(getDate(cfg, fileData)!, cfg.locale))
       }
 

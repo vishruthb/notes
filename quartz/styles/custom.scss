@@ -37,12 +37,12 @@ h6 {
   font-size: 1.75rem;
 
   a {
-    color: color-mix(in srgb, var(--darkgray) 70%, transparent);
+    color: var(--darkgray);
     font-weight: 400;
     transition: color 0.18s ease;
 
     &:hover {
-      color: var(--darkgray);
+      color: color-mix(in srgb, var(--darkgray) 70%, transparent);
     }
   }
 }
