@@ -3,13 +3,15 @@ Given some $f: R^d \rightarrow R$, find:
 - $w*=\text{argmin}_{w \in R^d} f(w)$
 where $f$ is continuous, differentiable, etc.
 
-**Linear Regression**
+Linear Regression
 
 [[☝️ Logistic Regression]]
 
+Gradient Descent
+
 Properties of Convex Functions
 
-[[Gradient Descent]]
+
 
 Backtracking Line Search
 
@@ -21,4 +23,4 @@ Strong Convexity
 
 Constrained Optimization
 
-TODO + split up into separate pages
+// TODO + split up into separate pages
