@@ -26,6 +26,7 @@ export default (() => {
     const path = url.pathname as FullSlug
     const baseDir = fileData.slug === "404" ? path : pathToRoot(fileData.slug!)
     const iconPath = joinSegments(baseDir, "static/icon.png")
+    const faviconPath = joinSegments(baseDir, "favicon.ico")
 
     // Url of current page
     const socialUrl =
@@ -82,7 +83,10 @@ export default (() => {
           </>
         )}
 
-        <link rel="icon" href={iconPath} />
+        <link rel="icon" type="image/png" sizes="512x512" href={`${iconPath}?v=2`} />
+        <link rel="shortcut icon" type="image/png" href={`${iconPath}?v=2`} />
+        <link rel="apple-touch-icon" href={`${iconPath}?v=2`} />
+        <link rel="alternate icon" href={faviconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
         <link

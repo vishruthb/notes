@@ -26,10 +26,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
-      components: [
-        { Component: Component.Search(), grow: true },
-        { Component: Component.Darkmode() },
-      ],
+      components: [{ Component: Component.Search(), grow: true }],
     }),
     Component.DesktopOnly(Component.Explorer({ folderClickBehavior: "collapse" })),
   ],
@@ -47,10 +44,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
-      components: [
-        { Component: Component.Search(), grow: true },
-        { Component: Component.Darkmode() },
-      ],
+      components: [{ Component: Component.Search(), grow: true }],
     }),
     Component.DesktopOnly(Component.Explorer({ folderClickBehavior: "collapse" })),
   ],
