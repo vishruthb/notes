@@ -1,8 +1,10 @@
-import { formatDate, getDate } from "./Date"
+import { Date, getDate } from "./Date"
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import readingTime from "reading-time"
 import { classNames } from "../util/lang"
 import { i18n } from "../i18n"
+import { JSX } from "preact"
+import style from "./styles/contentMeta.scss"
 
 interface ContentMetaOptions {
   /**
@@ -13,11 +15,13 @@ interface ContentMetaOptions {
    * Whether to display reading time
    */
   showReadingTime: boolean
+  showComma: boolean
 }
 
 const defaultOptions: ContentMetaOptions = {
   showDate: false,
   showReadingTime: true,
+  showComma: true,
 }
 
 export default ((opts?: Partial<ContentMetaOptions>) => {
@@ -28,10 +32,10 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
     const text = fileData.text
 
     if (text) {
-      const segments: string[] = []
+      const segments: (string | JSX.Element)[] = []
 
       if (options.showDate && fileData.dates) {
-        segments.push(formatDate(getDate(cfg, fileData)!, cfg.locale))
+        segments.push(<Date date={getDate(cfg, fileData)!} locale={cfg.locale} />)
       }
 
       // Display reading time if enabled
@@ -40,20 +44,20 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
         const displayedTime = i18n(cfg.locale).components.contentMeta.readingTime({
           minutes: Math.ceil(minutes),
         })
-        segments.push(displayedTime)
+        segments.push(<span>{displayedTime}</span>)
       }
 
-      return <p class={classNames(displayClass, "content-meta")}>{segments.join(", ")}</p>
+      return (
+        <p show-comma={options.showComma} class={classNames(displayClass, "content-meta")}>
+          {segments}
+        </p>
+      )
     } else {
       return null
     }
   }
 
-  ContentMetadata.css = `
-  .content-meta {
-    margin-top: 0;
-    color: var(--gray);
-  }
-  `
+  ContentMetadata.css = style
+
   return ContentMetadata
 }) satisfies QuartzComponentConstructor

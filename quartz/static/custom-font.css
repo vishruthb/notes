@@ -1,11 +1,18 @@
 /* Custom fonts */
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap");
-@import "./font/cmun.css";
+@import url("https://fonts.cdnfonts.com/css/cmu-serif");
+@import url("https://fonts.cdnfonts.com/css/cmu-typewriter-text");
 @import "./font/abc-marist.css";
 
 :root {
-    --headerFont: "ABC Marist", "Times New Roman", Times, serif !important;
-    --bodyFont: "ABC Marist", "Times New Roman", Times, serif !important;
-    --codeFont: "Computer Modern Typewriter", monospace !important;
-    --metaFont: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  --headerFont: "ABC Marist", "Times New Roman", Times, serif !important;
+  --bodyFont: "CMU Serif", "Computer Modern Serif", "Times New Roman", Times, serif !important;
+  --codeFont: "CMU Typewriter Text", "Computer Modern Typewriter", monospace !important;
+  --metaFont: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+code,
+pre,
+figure[data-rehype-pretty-code-figure] code {
+  font-weight: 200;
 }

@@ -47,7 +47,7 @@ h6 {
   }
 }
 
-#explorer-content {
+.explorer-content {
   ul li > a {
     font-size: 1.05rem;
   }
@@ -62,6 +62,31 @@ h6 {
 
 button#explorer h1 {
   font-size: 1.05rem;
+}
+
+@media all and not ($mobile) {
+  .page > #quartz-body > .sidebar.left {
+    align-self: stretch;
+    height: auto;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  .page > #quartz-body > .sidebar.left .explorer {
+    flex: 1 1 auto;
+    overflow: visible;
+  }
+
+  .page > #quartz-body > .sidebar.left .explorer-content,
+  .page > #quartz-body > .sidebar.left div:has(> .explorer-ul),
+  .page > #quartz-body > .sidebar.left .explorer-ul {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .page > #quartz-body > .sidebar.left .explorer-ul.gradient-active {
+    mask-image: none;
+  }
 }
 
 .content-meta {
