@@ -1,14 +1,58 @@
 /* Custom fonts */
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap");
-@import url("https://fonts.cdnfonts.com/css/cmu-serif");
-@import url("https://fonts.cdnfonts.com/css/cmu-typewriter-text");
-@import "./font/abc-marist.css";
+@font-face {
+  font-family: "CMU Serif";
+  src: url("./font/cmunrm.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CMU Serif";
+  src: url("./font/cmunti.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CMU Serif";
+  src: url("./font/cmunbx.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CMU Serif";
+  src: url("./font/cmunbi.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CMU Typewriter Text";
+  src: url("./font/cmunbtl.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CMU Typewriter Text";
+  src: url("./font/cmunbto.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+}
 
 :root {
-  --headerFont: "ABC Marist", "Times New Roman", Times, serif !important;
+  --titleFont: "CMU Serif", "Computer Modern Serif", "Times New Roman", Times, serif !important;
+  --headerFont: "CMU Serif", "Computer Modern Serif", "Times New Roman", Times, serif !important;
   --bodyFont: "CMU Serif", "Computer Modern Serif", "Times New Roman", Times, serif !important;
   --codeFont: "CMU Typewriter Text", "Computer Modern Typewriter", monospace !important;
-  --metaFont: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  --metaFont: "CMU Serif", "Computer Modern Serif", "Times New Roman", Times, serif !important;
 }
 
 code,
