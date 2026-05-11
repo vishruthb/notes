@@ -161,8 +161,12 @@ a {
 }
 
 .page {
-  max-width: calc(#{map.get($breakpoints, desktop)} + 300px);
-  margin: 0 auto;
+  @media all and (max-width: $fullPageWidth) {
+    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: $pageWidth;
+  }
+
   & article {
     & > h1 {
       font-size: 1.5rem;
@@ -190,77 +194,53 @@ a {
   }
 
   & > #quartz-body {
-    display: grid;
-    grid-template-columns: #{map.get($desktopGrid, templateColumns)};
-    grid-template-rows: #{map.get($desktopGrid, templateRows)};
-    column-gap: #{map.get($desktopGrid, columnGap)};
-    row-gap: #{map.get($desktopGrid, rowGap)};
-    grid-template-areas: #{map.get($desktopGrid, templateAreas)};
-
-    @media all and ($tablet) {
-      grid-template-columns: #{map.get($tabletGrid, templateColumns)};
-      grid-template-rows: #{map.get($tabletGrid, templateRows)};
-      column-gap: #{map.get($tabletGrid, columnGap)};
-      row-gap: #{map.get($tabletGrid, rowGap)};
-      grid-template-areas: #{map.get($tabletGrid, templateAreas)};
-    }
-    @media all and ($mobile) {
-      grid-template-columns: #{map.get($mobileGrid, templateColumns)};
-      grid-template-rows: #{map.get($mobileGrid, templateRows)};
-      column-gap: #{map.get($mobileGrid, columnGap)};
-      row-gap: #{map.get($mobileGrid, rowGap)};
-      grid-template-areas: #{map.get($mobileGrid, templateAreas)};
-    }
-
-    @media all and not ($desktop) {
-      padding: 0 1rem;
-    }
-    @media all and ($mobile) {
-      margin: 0 auto;
+    width: 100%;
+    display: block;
+    @media all and (max-width: $fullPageWidth) {
+      display: flex;
+      flex-direction: column;
     }
 
     & .sidebar {
-      gap: 1.2rem;
-      top: 0;
-      box-sizing: border-box;
-      padding: $topSpacing 2rem 2rem 2rem;
+      flex: 1;
       display: flex;
-      height: 100vh;
-      position: sticky;
+      flex-direction: column;
+      gap: 2rem;
+      top: 0;
+      width: $sidePanelWidth;
+      margin-top: $topSpacing;
+      box-sizing: border-box;
+      padding: 0 4rem;
+      position: fixed;
+      @media all and (max-width: $fullPageWidth) {
+        position: initial;
+        flex-direction: row;
+        padding: 0;
+        width: initial;
+        margin-top: 2rem;
+      }
     }
 
     & .sidebar.left {
-      z-index: 1;
-      grid-area: grid-sidebar-left;
-      flex-direction: column;
-      @media all and ($mobile) {
+      left: calc(calc(100vw - $pageWidth) / 2 - $sidePanelWidth);
+      @media all and (max-width: $fullPageWidth) {
         gap: 0;
         align-items: center;
-        position: initial;
-        display: flex;
-        height: unset;
-        flex-direction: row;
-        padding: 0;
-        padding-top: 2rem;
       }
     }
 
     & .sidebar.right {
-      grid-area: grid-sidebar-right;
-      margin-right: 0;
-      flex-direction: column;
-      @media all and ($mobile) {
-        margin-left: inherit;
-        margin-right: inherit;
-      }
-      @media all and not ($desktop) {
-        position: initial;
-        height: unset;
-        width: 100%;
-        flex-direction: row;
-        padding: 0;
-        & > * {
+      right: calc(calc(100vw - $pageWidth) / 2 - $sidePanelWidth);
+      flex-wrap: wrap;
+      & > * {
+        @media all and (max-width: $fullPageWidth) {
           flex: 1;
+          min-width: 140px;
+        }
+      }
+
+      @media all and (max-width: $fullPageWidth) {
+        & > * {
           max-height: 24rem;
         }
         & > .toc {
@@ -268,44 +248,30 @@ a {
         }
       }
     }
-    & .page-header,
-    & .page-footer {
-      margin-top: 1rem;
-    }
+  }
 
-    & .page-header {
-      grid-area: grid-header;
-      margin: $topSpacing 0 0 0;
-      @media all and ($mobile) {
-        margin-top: 0;
-        padding: 0;
-      }
+  & .page-header {
+    width: $pageWidth;
+    margin: $topSpacing auto 0 auto;
+    @media all and (max-width: $fullPageWidth) {
+      width: initial;
+      margin-top: 2rem;
     }
+  }
 
-    & .center > article {
-      grid-area: grid-center;
-    }
+  & .page-footer {
+    margin-top: 1rem;
+  }
 
-    & footer {
-      grid-area: grid-footer;
-    }
-
-    & .center,
-    & footer {
-      max-width: 100%;
-      min-width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-      @media all and ($tablet) {
-        margin-right: 0;
-      }
-      @media all and ($mobile) {
-        margin-right: 0;
-        margin-left: 0;
-      }
-    }
-    & footer {
+  & .center,
+  & footer {
+    margin-left: auto;
+    margin-right: auto;
+    width: $pageWidth;
+    @media all and (max-width: $fullPageWidth) {
+      width: initial;
       margin-left: 0;
+      margin-right: 0;
     }
   }
 }
