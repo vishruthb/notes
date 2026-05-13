@@ -1,28 +1,28 @@
-# Theory
-Haskell programs are basically just sets of equations.
-### Function Equations
+# theory
+haskell programs are basically just sets of equations.
+### function equations
 ```haskell
 -- multiple equations, chosen top‑to‑bottom
 fact 0 = 1
 fact n = n * fact (n-1)
 ```
-### Guards
+### guards
 ```haskell
 signum x | x > 0  =  1
          | x == 0 =  0
          | x < 0  = -1
 ```
-### Local Bindings
+### local bindings
 ```haskell
 let y = x + 1 in y * y        -- expression‑level
 
 foo x = result
   where result = x * x        -- equation‑level
 ```
-### Pattern Matching Rules
+### pattern matching rules
 - **left‑linearity** – no repeated variables.
 - patterns tried in order, first match wins.
-# Implementation
+# implementation
 ```haskell
 (\x -> e) y     ==  let x = y in e
 x : xs          ==  (:) x xs

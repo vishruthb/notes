@@ -1,13 +1,13 @@
-# Theory
-Recursion and pattern matching is Haskell’s control structure.
-### Structural Recursion
-Break a value into constructors, solve sub‑parts, re‑combine.
+# theory
+recursion and pattern matching is haskell’s control structure.
+### structural recursion
+break a value into constructors, solve sub‑parts, re‑combine.
 ```haskell
 length [] = 0
 
 length (_:xs) = 1 + length xs
 ```
-### Mutual Recursion
+### mutual recursion
 ```haskell
 even', odd' :: Int -> Bool
 
@@ -19,15 +19,15 @@ odd' 0 = False
 
 odd' n = even' (n-1)
 ```
-### Tail Recursion
-Carry accumulator so last action is the recursive call.
+### tail recursion
+carry accumulator so last action is the recursive call.
 ```haskell
 sumTR xs = go 0 xs
   where
     go acc []     = acc
     go acc (y:ys) = go (acc + y) ys
 ```
-# Implementation
+# implementation
 ```haskell
 -- literals
 0    -> base case

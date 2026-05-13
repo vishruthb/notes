@@ -1,11 +1,11 @@
-# Shortest Path Problem
-Find the shortest path from a source node to all other nodes in a graph with non-negative edge weights.
-# Theory
-Use a priority queue to efficiently extract the node with the smallest tentative distance and updates the distances of its neighbors if a shorter path is found.
-## Key Operations:
-- **`deletemin(H)`**: Retrieves the vertex with the smallest distance from the priority queue.
-- **`decreasekey(H, u)`**: Updates a vertex's distance in the queue if a shorter path is found.
-# Implementation
+# shortest path problem
+find the shortest path from a source node to all other nodes in a graph with non-negative edge weights.
+# theory
+use a priority queue to efficiently extract the node with the smallest tentative distance and updates the distances of its neighbors if a shorter path is found.
+## key operations:
+- **`deletemin(H)`**: retrieves the vertex with the smallest distance from the priority queue.
+- **`decreasekey(H, u)`**: updates a vertex's distance in the queue if a shorter path is found.
+# implementation
 ```python
 import heapq
 
@@ -39,10 +39,10 @@ def dijkstra(graph, source):
 
     return dist
 ```
-## Runtime
-- **Priority Queue Operations**:
+## runtime
+- **priority queue operations**:
 	- `deletemin`: $O(\log V)$
 	- `decreasekey`: $(O(\log V)$
-- **Overall Complexity**:
-	- Binary Heap: $(O((V + E) \log V)$
-	- Array (naive): $O(V^2)$
+- **overall complexity**:
+	- binary heap: $(O((V + E) \log V)$
+	- array (naive): $O(V^2)$

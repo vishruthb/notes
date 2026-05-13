@@ -13,15 +13,15 @@ export default ((opts?: Options) => {
     return (
       <footer class={`${displayClass ?? ""}`}>
         <p>
-          {i18n(cfg.locale).components.footer.createdWith} Content by{" "}
+          {i18n(cfg.locale).components.footer.createdWith} content by{" "}
           <a href="https://vishruthb.github.io/" target="_blank">
-            Vishruth Bharath
+            vishruth bharath
           </a>
           , website created with{" "}
           <a href="https://quartz.jzhao.xyz/" target="_blank">
-            Quartz
+            quartz
           </a>{" "}
-          © {year}
+          © {year}.
         </p>
         <ul>
           {Object.entries(links).map(([text, link]) => (

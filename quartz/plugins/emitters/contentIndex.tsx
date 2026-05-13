@@ -86,7 +86,7 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndexMap, limit?:
       <description>${!!limit ? i18n(cfg.locale).pages.rss.lastFewNotes({ count: limit }) : i18n(cfg.locale).pages.rss.recentNotes} on ${escapeHTML(
         cfg.pageTitle,
       )}</description>
-      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <generator>quartz -- quartz.jzhao.xyz</generator>
       ${items}
     </channel>
   </rss>`
@@ -163,7 +163,7 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
             <link
               rel="alternate"
               type="application/rss+xml"
-              title="RSS Feed"
+              title="rss feed"
               href={`https://${ctx.cfg.configuration.baseUrl}/index.xml`}
             />,
           ],

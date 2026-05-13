@@ -377,8 +377,8 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
     removeAllChildren(results)
     if (finalResults.length === 0) {
       results.innerHTML = `<a class="result-card no-match">
-          <h3>No results.</h3>
-          <p>Try another search term?</p>
+          <h3>no results.</h3>
+          <p>try another search term?</p>
       </a>`
     } else {
       results.append(...finalResults.map(resultToHTML))

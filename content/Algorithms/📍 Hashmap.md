@@ -1,8 +1,8 @@
-# Map Problem
-Maintain a set of key-value pairs with quick insertion, removal, and retrieval.
-# Theory
-Are data structures indexed through **key-value pairs** with quick retrieval, insertion, and deletion. To handle collisions, we can use **chaining** (where each slot holds a list of items that hashed to the same slot) or **open addressing** (where a collision triggers a sequence to find an empty slot).
-# Implementation
+# map problem
+maintain a set of key-value pairs with quick insertion, removal, and retrieval.
+# theory
+are data structures indexed through **key-value pairs** with quick retrieval, insertion, and deletion. to handle collisions, we can use **chaining** (where each slot holds a list of items that hashed to the same slot) or **open addressing** (where a collision triggers a sequence to find an empty slot).
+# implementation
 ```python
 class Node:
     def __init__(self, key, value):
@@ -11,7 +11,7 @@ class Node:
         self.next = None
 
 class HashTable:
-    
+
     def __init__(self, capacity: int):
         self.capacity = capacity
         self.size = 0
@@ -34,7 +34,7 @@ class HashTable:
                     return
                 prev, node = node, node.next
             prev.next = Node(key, value)
-        
+
         self.size += 1
 
         if self.size / self.capacity >= 0.5:
@@ -66,7 +66,7 @@ class HashTable:
                 self.size -= 1
                 return True
             prev, node = node, node.next
-        
+
         return False
 
     def getSize(self) -> int:
@@ -90,8 +90,8 @@ class HashTable:
                         new_node = new_node.next
                     new_node.next = Node(node.key, node.value)
                 node = node.next
-        
+
         self.table = new_table
 ```
-# Runtime
-All operations in the best case are $O(1)$ when there are no collisions, or if the resolution is efficient. 
+# runtime
+all operations in the best case are $O(1)$ when there are no collisions, or if the resolution is efficient.

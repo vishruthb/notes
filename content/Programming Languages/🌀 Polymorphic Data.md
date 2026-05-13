@@ -1,5 +1,5 @@
-# Theory  
-Parametric polymorphism lets one data description work for any element type.
+# theory
+parametric polymorphism lets one data description work for any element type.
 
 ```haskell
 data List a = Nil | Cons a (List a)
@@ -7,10 +7,10 @@ data List a = Nil | Cons a (List a)
 
 `List` is a type constructor; `a` is a type parameter.
 
-**Benefits**
-- Code reuse – functions like `map`, `length` work for every `a`.
-- Type safety – operations preserve element type.
-# Example
+**benefits**
+- code reuse – functions like `map`, `length` work for every `a`.
+- type safety – operations preserve element type.
+# example
 ```haskell
 data Tree a
   = Empty
@@ -20,7 +20,7 @@ singleton :: a -> Tree a
 singleton x = Node x Empty Empty
 ```
 
-Generation and pattern-matching mirror concrete types:
+generation and pattern-matching mirror concrete types:
 ```haskell
 count :: Tree a -> Int
 count Empty        = 0

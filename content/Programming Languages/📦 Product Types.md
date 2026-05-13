@@ -1,10 +1,10 @@
-# Theory
-A product type bundles multiple values together (“and” data).
-### Tuples
+# theory
+a product type bundles multiple values together (“and” data).
+### tuples
 ```haskell
 type Point = (Double, Double)
 ```
-### Records
+### records
 ```haskell
 data Circle = Circle
   { cx :: Double
@@ -13,11 +13,11 @@ data Circle = Circle
   }
 ```
 
-Pattern‑match or use field selectors: `r circ`.
-### Semantics
-If `A` has $|A|$ values and `B` has $|B|$ values, then $(A,B)$ has $|A|\times|B|$.
-# Implementation
-Constructors combine, patterns split:
+pattern‑match or use field selectors: `r circ`.
+### semantics
+if `A` has $|A|$ values and `B` has $|B|$ values, then $(A,B)$ has $|A|\times|B|$.
+# implementation
+constructors combine, patterns split:
 ```haskell
 area :: Circle -> Double
 area (Circle _ _ rad) = pi * rad * rad

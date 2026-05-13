@@ -88,7 +88,7 @@ export default (() => {
         <link rel="apple-touch-icon" href={`${iconPath}?v=2`} />
         <link rel="alternate icon" href={faviconPath} />
         <meta name="description" content={description} />
-        <meta name="generator" content="Quartz" />
+        <meta name="generator" content="quartz" />
         <link
           href={joinSegments(baseDir, "static/custom-font.css")}
           rel="stylesheet"

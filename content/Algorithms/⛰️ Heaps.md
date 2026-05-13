@@ -1,15 +1,15 @@
-# Theory
-Used to get the smallest element (min heap) whenever the element is popped. In a min-heap, for a node at index $i$, the left child is at index $2 \times i$, the right child is at index $2 \times i + 1$, and the parent is at index $i//2$.
+# theory
+used to get the smallest element (min heap) whenever the element is popped. in a min-heap, for a node at index $i$, the left child is at index $2 \times i$, the right child is at index $2 \times i + 1$, and the parent is at index $i//2$.
 
-## Types
-- **MaxHeap**: The key present at the root node must be the **maximum** of all it's children.
-- **MinHeap**: Key present at the root node must be the **minimum** among all of it's child keys.
+## types
+- **maxheap**: the key present at the root node must be the **maximum** of all it's children.
+- **minheap**: key present at the root node must be the **minimum** among all of it's child keys.
 
-> [!Note]
- > Similar properties will be true for all subtrees in [[🌳 Binary Search Tree]], where each parent node has a value less than or equal to its children's values. Thus, we're able to always access the smallest element at the root of the heap.
+> [!note]
+ > similar properties will be true for all subtrees in [[🌳 Binary Search Tree|🌳 binary search tree]], where each parent node has a value less than or equal to its children's values. thus, we're able to always access the smallest element at the root of the heap.
 
-# Implementation
-We can use the `heapq` module in python.
+# implementation
+we can use the `heapq` module in python.
 
 ```python
 import heapq
@@ -21,7 +21,7 @@ heapq.heappush(sample, 6) # [2, 3, 4, 5, 6, 7]
 heapq.heappop(sample) # pops and returns 2, the smallest element
 ```
 
-Alternatively, we can design our own minimum heap (or priority queue) class.
+alternatively, we can design our own minimum heap (or priority queue) class.
 
 ```python
 class MinHeap:
@@ -42,7 +42,7 @@ class MinHeap:
 			return -1
 		if len(self.heap) == 2:
 			return self.heap.pop()
-	    
+
 	    res = self.heap[1]
         # move last value to root
         self.heap[1] = self.heap.pop()
@@ -80,7 +80,7 @@ class MinHeap:
                 i = smallest_child
             else:
                 break
-			
+
 ```
-# Runtime
-Insertion and deletion (of the smallest element) is in $O(\log(n))$.
+# runtime
+insertion and deletion (of the smallest element) is in $O(\log(n))$.

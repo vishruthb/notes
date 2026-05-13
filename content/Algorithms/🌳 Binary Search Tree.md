@@ -1,15 +1,15 @@
-# Storing Data
-A Binary Search Tree (BST) is a hierarchical data structure that stores elements in a way that allows for efficient insertion, deletion, and searching operations. Each node in a BST satisfies the following property:
+# storing data
+a binary search tree (bst) is a hierarchical data structure that stores elements in a way that allows for efficient insertion, deletion, and searching operations. each node in a bst satisfies the following property:
 
-- **BST Property**: For any node `N`:
-  - All nodes in the left subtree of `N` have values **less than** `N`'s value.
-  - All nodes in the right subtree of `N` have values **greater than** `N`'s value.
-### Traversals
-BSTs support the same traversal methods as binary trees:
-- **Inorder Traversal**: Produces a sorted order of elements in the BST.
-- **Preorder Traversal**: Processes the root before its subtrees (useful for copying trees).
-- **Postorder Traversal**: Processes subtrees before the root (useful for deleting trees).
-# Implementation
+- **bst property**: for any node `N`:
+  - all nodes in the left subtree of `N` have values **less than** `N`'s value.
+  - all nodes in the right subtree of `N` have values **greater than** `N`'s value.
+### traversals
+bsts support the same traversal methods as binary trees:
+- **inorder traversal**: produces a sorted order of elements in the bst.
+- **preorder traversal**: processes the root before its subtrees (useful for copying trees).
+- **postorder traversal**: processes subtrees before the root (useful for deleting trees).
+# implementation
 ```python
 class Node:
     def __init__(self, value):
@@ -57,13 +57,13 @@ class BinarySearchTree:
             self.postorder_traversal(root.right)
             print(root.value, end=" ")
 ```
-# Complexity
-1. **Insertion**: $O(h)$, where $h$ is the height of the tree.
-2. **Search**: $O(h)$.
-3. **Deletion**: $O(h)$.
+# complexity
+1. **insertion**: $O(h)$, where $h$ is the height of the tree.
+2. **search**: $O(h)$.
+3. **deletion**: $O(h)$.
 
-- In the best case (balanced tree), $h = \log(n)$, so these operations are $O(\log(n))$.
-- In the worst case (skewed tree), $h = n$, so these operations are $O(n)$.
+- in the best case (balanced tree), $h = \log(n)$, so these operations are $O(\log(n))$.
+- in the worst case (skewed tree), $h = n$, so these operations are $O(n)$.
 
-1. **Storage**: $O(n)$ to store all the nodes.
-2. **Auxiliary space**: $O(h)$ in recursion during operations like traversal.
+1. **storage**: $O(n)$ to store all the nodes.
+2. **auxiliary space**: $O(h)$ in recursion during operations like traversal.

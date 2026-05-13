@@ -1,2 +1,2 @@
-Computer systems allow us to understand how hardware and software work together to execute programs reliably and efficiently.
-- The [[⚙️ Operating System]] provides the software layer that manages resources, enforces isolation, schedules concurrent tasks, and offers abstractions like threads and files so programs can run safely and in parallel.
+computer systems allow us to understand how hardware and software work together to execute programs reliably and efficiently.
+- the [[⚙️ Operating System|⚙️ operating system]] provides the software layer that manages resources, enforces isolation, schedules concurrent tasks, and offers abstractions like threads and files so programs can run safely and in parallel.

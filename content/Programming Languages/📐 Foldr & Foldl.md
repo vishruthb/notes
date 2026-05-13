@@ -1,5 +1,5 @@
-# Theory  
-Folds reduce a list to a single value by combining elements with a binary operator.
+# theory
+folds reduce a list to a single value by combining elements with a binary operator.
 
 | name    | type                                      | accumulation order                |
 | ------- | ----------------------------------------- | --------------------------------- |
@@ -13,12 +13,12 @@ foldr op z (x:xs) = x `op` foldr op z xs
 foldl op z []     = z
 foldl op z (x:xs) = foldl op (z `op` x) xs
 ```
-### Use Cases
+### use cases
 - `foldr` works on **infinite lists** (lazy, needs only what `op` demands).
 - `foldl'` (strict version) is memory‑friendly for large finite lists.
 $$\text{foldr }(+)0[1,2,3]⟹1+(2+(3+0))$$
 $$\text{foldl }(+)0[1,2,3]⟹((0+1)+2)+3$$
-# Implementation
+# implementation
 ```haskell
 sumR  = foldr (+) 0
 sumL  = foldl' (+) 0

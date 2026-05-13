@@ -1,17 +1,17 @@
-# Minimum Spanning Tree (MST) Problem
-Find the minimum spanning tree of a connected graph, ensuring that all vertices are connected with the minimum total edge weight.
+# minimum spanning tree (mst) problem
+find the minimum spanning tree of a connected graph, ensuring that all vertices are connected with the minimum total edge weight.
 
-## Theory
-A Minimum Spanning Tree (MST) connects all vertices of a graph with the smallest possible total edge weight, without creating any cycles. Two common algorithms for solving the MST problem are **Kruskal's Algorithm** and **Prim's Algorithm**.
+## theory
+a minimum spanning tree (mst) connects all vertices of a graph with the smallest possible total edge weight, without creating any cycles. two common algorithms for solving the mst problem are **kruskal's algorithm** and **prim's algorithm**.
 
-### **Kruskal’s Algorithm**
-A greedy approach that processes edges in ascending order of weights and adds them to the MST if they do not form a cycle.
+### **kruskal’s algorithm**
+a greedy approach that processes edges in ascending order of weights and adds them to the mst if they do not form a cycle.
 
-### **Prim’s Algorithm**
-Another greedy approach that grows the MST by starting from any arbitrary node and adding the smallest edge that connects a new vertex to the current tree.
+### **prim’s algorithm**
+another greedy approach that grows the mst by starting from any arbitrary node and adding the smallest edge that connects a new vertex to the current tree.
 
-# Implementation
-## Kruskal’s Algorithm
+# implementation
+## kruskal’s algorithm
 
 ```python
 class UnionFind:
@@ -65,12 +65,12 @@ def kruskal(graph, num_vertices):
     return mst, total_weight
 ```
 
-### Runtime:
-- Sorting Edges: $(O(E \log V)$
-- Union-Find Operations: $O(E \cdot \alpha(V))$, where $\alpha$ is the inverse Ackermann function. Find takes the height of the tree, which we can prove to be up to $O(\lg(n))$, where $n$ is the number of vertices $|V|$.
-- **Overall**: $O(E \log V)$
+### runtime:
+- sorting edges: $(O(E \log V)$
+- union-find operations: $O(E \cdot \alpha(V))$, where $\alpha$ is the inverse ackermann function. find takes the height of the tree, which we can prove to be up to $O(\lg(n))$, where $n$ is the number of vertices $|V|$.
+- **overall**: $O(E \log V)$
 
-## Prim’s Algorithm
+## prim’s algorithm
 
 ```python
 import heapq
@@ -109,16 +109,16 @@ def prim(graph, num_vertices):
     return mst, total_weight
 ```
 
-### Runtime:
-- Priority Queue Operations: $O(E \log V)$
-- **Overall**: $(O(E \log V)$
+### runtime:
+- priority queue operations: $O(E \log V)$
+- **overall**: $(O(E \log V)$
 
-# Notes
+# notes
 
-| **Aspect**     | **Kruskal's**  | **Prim's**                 |
+| **aspect**     | **kruskal's**  | **prim's**                 |
 | -------------- | -------------- | -------------------------- |
-| Approach       | Greedy by edge | Greedy by growing the tree |
-| Data Structure | Union-Find     | Priority Queue             |
-| Best for       | Sparse graphs  | Dense graphs               |
-| Runtime        | $O(E \log E)$  | $O(E \log V)$              |
+| approach       | greedy by edge | greedy by growing the tree |
+| data structure | union-find     | priority queue             |
+| best for       | sparse graphs  | dense graphs               |
+| runtime        | $O(E \log E)$  | $O(E \log V)$              |
 

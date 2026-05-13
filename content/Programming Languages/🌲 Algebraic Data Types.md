@@ -1,25 +1,25 @@
-# Theory  
-Algebraic Data Types (ADTs) build complex data from sums and products.
-- [[📦 Product Types]] combine fields (logical **and**).  
-- [[🔀 Sum Types]] choose between constructors (logical **or**).  
-- [[🌳 Recursive Types]] reference themselves.  
-- [[🌀 Polymorphic Data]] abstracts over element types.
-### Expressiveness  
-Tuples, lists, `Maybe`, `Either`, user trees—all ADTs.
-### Example  
+# theory
+algebraic data types (adts) build complex data from sums and products.
+- [[📦 Product Types|📦 product types]] combine fields (logical **and**).
+- [[🔀 Sum Types|🔀 sum types]] choose between constructors (logical **or**).
+- [[🌳 Recursive Types|🌳 recursive types]] reference themselves.
+- [[🌀 Polymorphic Data|🌀 polymorphic data]] abstracts over element types.
+### expressiveness
+tuples, lists, `Maybe`, `Either`, user trees—all adts.
+### example
 ```haskell
 data Result a
   = Success a
   | Failure String
 ```
 
-> [!Note]
-> Pattern matching + compiler exhaustiveness = strong invariants.
-# Implementation
-Define once, then use in pattern matches, derive instances:
+> [!note]
+> pattern matching + compiler exhaustiveness = strong invariants.
+# implementation
+define once, then use in pattern matches, derive instances:
 ```haskell
 data Color = Red | Green | Blue
   deriving (Eq, Show)
 ```
 
-Deriving saves boilerplate for `Eq`, `Ord`, `Read`, `Show`, etc.
+deriving saves boilerplate for `Eq`, `Ord`, `Read`, `Show`, etc.

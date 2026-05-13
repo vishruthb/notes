@@ -1,21 +1,21 @@
-Theory explores the mathematical ideas that let us define, reason about, and reuse computer programs.
-- [[🪨 Lambda Calculus]] serves as the logic that forms the core of computation.
-- [[🌿 Haskell]] is a typed, lazy, purely functional $\lambda$‑calculus with syntax, types, and a rich standard library.
-	- [[✏️ Syntax & Equations]] involve function equations, patterns, guards, `where`/`let` scope.
-	- [[🛡️ Type System]] allows for polymorphism, type annotations, type inference, etc.
-	- [[🔄 Recursion & Pattern Matching]] involves structural recursion, mutual recursion, and tail recursion.
-	- [[📜 Lists & Comprehensions]] give us built‑in list syntax, ranges, comprehensions, library helpers.
-- [[🌲 Algebraic Data Types]] are user‑defined product, sum, recursive and polymorphic types that include tuples & lists.
-    - [[📦 Product Types]] include “and” data (records/tuples), pattern matching, and field labels.
-    - [[🔀 Sum Types]] cover “either/or” data, tagged unions, exhaustive case analysis.
-    - [[🌳 Recursive Types]] cover lists, trees, and structural induction.
-    - [[🌀 Polymorphic Data]] covers type constructors & parametric data (e.g. `List a`, `Tree a`).
-- [[🔧 Higher‑Order Functions]] bottles common iteration patterns.
-	- [[🚿 Map]] applies a transformation to every element.
-	- [[🔍 Filter]] selects elements that satisfy a predicate.
-	- [[📐 Foldr & Foldl]] reduce a list right‑ or left‑associatively (sums, cats, reversals).
-	- [[➡️ Function Combinators]] such as `flip`, `(.)` provide eta‑conversion & point‑free style.
-- [[🔒 Closures]] are the key mechanism that enforces static scoping.
-- [[🎛️ Type Classes]] enable ad-hoc polymorphism.
-- [[📜 Parsers]] convert raw input into a structured value like an AST.
-- [[🌀 Monads]] let you chain actions while preserving context.
+theory explores the mathematical ideas that let us define, reason about, and reuse computer programs.
+- [[🪨 Lambda Calculus|🪨 lambda calculus]] serves as the logic that forms the core of computation.
+- [[🌿 Haskell|🌿 haskell]] is a typed, lazy, purely functional $\lambda$‑calculus with syntax, types, and a rich standard library.
+	- [[✏️ Syntax & Equations|✏️ syntax & equations]] involve function equations, patterns, guards, `where`/`let` scope.
+	- [[🛡️ Type System|🛡️ type system]] allows for polymorphism, type annotations, type inference, etc.
+	- [[🔄 Recursion & Pattern Matching|🔄 recursion & pattern matching]] involves structural recursion, mutual recursion, and tail recursion.
+	- [[📜 Lists & Comprehensions|📜 lists & comprehensions]] give us built‑in list syntax, ranges, comprehensions, library helpers.
+- [[🌲 Algebraic Data Types|🌲 algebraic data types]] are user‑defined product, sum, recursive and polymorphic types that include tuples & lists.
+    - [[📦 Product Types|📦 product types]] include “and” data (records/tuples), pattern matching, and field labels.
+    - [[🔀 Sum Types|🔀 sum types]] cover “either/or” data, tagged unions, exhaustive case analysis.
+    - [[🌳 Recursive Types|🌳 recursive types]] cover lists, trees, and structural induction.
+    - [[🌀 Polymorphic Data|🌀 polymorphic data]] covers type constructors & parametric data (e.g. `List a`, `Tree a`).
+- [[🔧 Higher‑Order Functions|🔧 higher‑order functions]] bottles common iteration patterns.
+	- [[🚿 Map|🚿 map]] applies a transformation to every element.
+	- [[🔍 Filter|🔍 filter]] selects elements that satisfy a predicate.
+	- [[📐 Foldr & Foldl|📐 foldr & foldl]] reduce a list right‑ or left‑associatively (sums, cats, reversals).
+	- [[➡️ Function Combinators|➡️ function combinators]] such as `flip`, `(.)` provide eta‑conversion & point‑free style.
+- [[🔒 Closures|🔒 closures]] are the key mechanism that enforces static scoping.
+- [[🎛️ Type Classes|🎛️ type classes]] enable ad-hoc polymorphism.
+- [[📜 Parsers|📜 parsers]] convert raw input into a structured value like an ast.
+- [[🌀 Monads|🌀 monads]] let you chain actions while preserving context.

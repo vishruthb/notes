@@ -1,14 +1,14 @@
-# Traversal Problem
-Visit each vertex connected to a source node in a graph, ensuring all nodes are reached and detecting any cycles if they exist.
-# Theory
-Explore as far down a branch as possible before backtracking, using a recursive approach and a visited set to ensure each node is processed only once.
-# Implementation
+# traversal problem
+visit each vertex connected to a source node in a graph, ensuring all nodes are reached and detecting any cycles if they exist.
+# theory
+explore as far down a branch as possible before backtracking, using a recursive approach and a visited set to ensure each node is processed only once.
+# implementation
 ```python
 # adjacency list
 def dfs(s, adj):
 	vis = set()
 	dfs_visit(s, adj, vis)
- 
+
 def dfs_visit(s, adj, vis):
 	vis.add(s)
 	for n in adj[s]:
@@ -37,15 +37,15 @@ def dfs(grid, r, c, visit):
     return count
 ```
 
-# Runtime
+# runtime
 $$O(V+E)$$
-DFS visits each vertex and edge once, leading to a linear time complexity relative to the number of vertices $V$ and edges $E$. Space complexity is $O(V)$ due to the recursion stack and visited array.
+dfs visits each vertex and edge once, leading to a linear time complexity relative to the number of vertices $V$ and edges $E$. space complexity is $O(V)$ due to the recursion stack and visited array.
 
-# Other Notes
-## Terms
-- **Pre/post numbers**: When nodes are entered/exited
-- **DFS Forest**: Represents tree relationships
-- **Tree/Forward Edges**: Go to descendants
-- **Back Edges**: Return to ancestors => Indicate cycles in directed graphs
-- **Cross Edges**: Connect two unrelated DFS branches
-- **Topological Sort**: Running DFS and ordering nodes by decreasing post numbers. Guarantees that all edges go forward.
+# other notes
+## terms
+- **pre/post numbers**: when nodes are entered/exited
+- **dfs forest**: represents tree relationships
+- **tree/forward edges**: go to descendants
+- **back edges**: return to ancestors => indicate cycles in directed graphs
+- **cross edges**: connect two unrelated dfs branches
+- **topological sort**: running dfs and ordering nodes by decreasing post numbers. guarantees that all edges go forward.

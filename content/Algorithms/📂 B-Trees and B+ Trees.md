@@ -1,22 +1,22 @@
-# Scalable Sorted Data Access Problem
-Efficiently store and manage large datasets in a sorted manner while minimizing disk I/O operations. These trees are particularly useful for database indexing and filesystem implementations.
-# Theory
-**B-Trees** and **B+ Trees** are generalizations of binary search trees designed to handle large amounts of data stored on disk. They differ as follows:
-## B-Trees:
-- Internal nodes store both keys and pointers to child nodes.
-- Keys guide searches, and data can be stored in internal or leaf nodes.
-- Supports efficient search, insertion, and deletion while maintaining balance.
-## B+ Trees:
-- All data is stored only in the leaf nodes, and internal nodes store only keys for guiding searches.
-- Leaf nodes are linked to form a sorted doubly linked list, making range queries efficient.
-- More efficient for sequential access.
-## Common Properties:
-1. Nodes can have multiple children (defined by order `m`):
-   - An internal node can have up to `m - 1` keys and `m` children.
-   - A node must have at least `⌈m/2⌉` children (except the root).
-2. Trees remain balanced by redistributing keys or splitting/merging nodes as needed.
-3. Height remains logarithmic: $O(\log_m(n))$.
-# Implementation
+# scalable sorted data access problem
+efficiently store and manage large datasets in a sorted manner while minimizing disk i/o operations. these trees are particularly useful for database indexing and filesystem implementations.
+# theory
+**b-trees** and **b+ trees** are generalizations of binary search trees designed to handle large amounts of data stored on disk. they differ as follows:
+## b-trees:
+- internal nodes store both keys and pointers to child nodes.
+- keys guide searches, and data can be stored in internal or leaf nodes.
+- supports efficient search, insertion, and deletion while maintaining balance.
+## b+ trees:
+- all data is stored only in the leaf nodes, and internal nodes store only keys for guiding searches.
+- leaf nodes are linked to form a sorted doubly linked list, making range queries efficient.
+- more efficient for sequential access.
+## common properties:
+1. nodes can have multiple children (defined by order `m`):
+   - an internal node can have up to `m - 1` keys and `m` children.
+   - a node must have at least `⌈m/2⌉` children (except the root).
+2. trees remain balanced by redistributing keys or splitting/merging nodes as needed.
+3. height remains logarithmic: $O(\log_m(n))$.
+# implementation
 ```python
 class BTreeNode:
     def __init__(self, t, leaf=False):
@@ -99,11 +99,11 @@ class BPlusTree(BTree):
             current = current.children[-1] if current.children else None
         return results
 ```
-# Complexity
-1. **Insertion**: $O(\log(n))$.
-2. **Search**: $O(\log(n))$.
-3. **Deletion**: $O(\log(n))$.
-4. **Range Queries (B+ Tree)**: $O(k + \log(n))$, where $k$ is the number of results.
+# complexity
+1. **insertion**: $O(\log(n))$.
+2. **search**: $O(\log(n))$.
+3. **deletion**: $O(\log(n))$.
+4. **range queries (b+ tree)**: $O(k + \log(n))$, where $k$ is the number of results.
 ---
-1. **Storage**: $O(n)$.
-2. **Auxiliary Space**: $O(h)$, where $h = \log(n)$.
+1. **storage**: $O(n)$.
+2. **auxiliary space**: $O(h)$, where $h = \log(n)$.

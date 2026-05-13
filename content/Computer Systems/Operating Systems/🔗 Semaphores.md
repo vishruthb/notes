@@ -1,23 +1,23 @@
-# Producer-Consumer Problem
-aka **Bounded Buffer Problem**
-- Producer: Generates resources
-- Consumer: Uses up resources
-- Buffers: Fixed-size, used to hold resources between production and consumption
+# producer-consumer problem
+aka **bounded buffer problem**
+- producer: generates resources
+- consumer: uses up resources
+- buffers: fixed-size, used to hold resources between production and consumption
 
-Problem is because producer and consumer can execute at different rates:
-- No serialization of one behind the other
-- There can be multiple producers and multiple consumers
-- Tasks are independent
-- The buffer allows each to run without explicit handoff
+problem is because producer and consumer can execute at different rates:
+- no serialization of one behind the other
+- there can be multiple producers and multiple consumers
+- tasks are independent
+- the buffer allows each to run without explicit handoff
 
-**Synchronization** allows us to ensure that concurrent producers and consumers access the buffer in a *correct way*.
-# Theory
-Semaphores are a synchronization variable that takes on non-negative integer values, and supports two operations:
-- `wait()`: An atomic operation that waits for the semaphore to become greater than 0, then decrements it by 1
-- `signal()`: An atomic operation that increments the semaphore by 1
-- Initialize the semaphore to some value
-- Cannot read the semaphore's value directly
-### Spinning
+**synchronization** allows us to ensure that concurrent producers and consumers access the buffer in a *correct way*.
+# theory
+semaphores are a synchronization variable that takes on non-negative integer values, and supports two operations:
+- `wait()`: an atomic operation that waits for the semaphore to become greater than 0, then decrements it by 1
+- `signal()`: an atomic operation that increments the semaphore by 1
+- initialize the semaphore to some value
+- cannot read the semaphore's value directly
+### spinning
 ```c
 wait(s) {
 	while (s <= 0);
@@ -28,7 +28,7 @@ signal(s) {
 	s++;
 }
 ```
-### Blocking
+### blocking
 ```c
 wait(s) {
 	if (s <= 0)
@@ -42,57 +42,57 @@ signal(s) {
 	s++;
 }
 ```
-# Blocking Semaphores
-Each semaphore is associated with a queue of waiting thread.
+# blocking semaphores
+each semaphore is associated with a queue of waiting thread.
 
 `wait()`:
-- If a semaphore is open (positive), thread continues
-- If a semaphore is closed (non-positive), thread blocks on queue
+- if a semaphore is open (positive), thread continues
+- if a semaphore is closed (non-positive), thread blocks on queue
 `signal()` opens the semaphore:
-- If a thread is waiting on the queue, the thread is unblocked
-- If no threads are waiting on the queue, the signal is remembered for the next thread
-- Has "history", basically a counter to track surplus signals (i.e. the number of available permits/units of resources to be consumed by future `wait()` calls - see [[#Implementation]])
-# Types
-**Binary Semaphore**
-- Represents access to a single resource
-- Guarantees mutual exclusion to a critical section
-- Behaves like a lock/mutex
+- if a thread is waiting on the queue, the thread is unblocked
+- if no threads are waiting on the queue, the signal is remembered for the next thread
+- has "history", basically a counter to track surplus signals (i.e. the number of available permits/units of resources to be consumed by future `wait()` calls - see [[#implementation|implementation]])
+# types
+**binary semaphore**
+- represents access to a single resource
+- guarantees mutual exclusion to a critical section
+- behaves like a lock/mutex
 
-**Counting Semaphore**
-- Represents a resource with many units available
-- Multiple threads can pass the semaphore at once
-- Number of threads determined by the semaphore "count"
+**counting semaphore**
+- represents a resource with many units available
+- multiple threads can pass the semaphore at once
+- number of threads determined by the semaphore "count"
 
-Binary has count $1$, Counting has count = $N$
-# Semaphores vs. Locks
-Semaphores have a value, enabling more semantics
-- When at most one, can be used for mutual exclusion (only 1 thread in a critical section)
-- When > 1, can allow multiple threads to access resources
+binary has count $1$, counting has count = $N$
+# semaphores vs. locks
+semaphores have a value, enabling more semantics
+- when at most one, can be used for mutual exclusion (only 1 thread in a critical section)
+- when > 1, can allow multiple threads to access resources
 
-Essentially, locks only provide mutual exclusion while semaphores can provide mutex **and** coordination, have a counting value, and can remember past signals (unlike [[🔮 Condition Variables]]).
+essentially, locks only provide mutual exclusion while semaphores can provide mutex **and** coordination, have a counting value, and can remember past signals (unlike [[🔮 Condition Variables|🔮 condition variables]]).
 
-**Use Cases:**
-- Mutual exclusion - Only 1 thread accessing a resource at a time
-- Event sequencing / thread coordination - Permit threads to wait for certain things to happen
-# Producer-Consumer with Semaphores
+**use cases:**
+- mutual exclusion - only 1 thread accessing a resource at a time
+- event sequencing / thread coordination - permit threads to wait for certain things to happen
+# producer-consumer with semaphores
 - `signal(s)` increments s
 	- `s` value is how  many items have been produced
 - `wait(s)` will return without waiting only if s > 0
 
-Constraints:
-- Consumer must wait for the producer to produce items
-- Producer must wait for the consumer to empty spaces
-- Only one thread can manipulate the buffer at once
+constraints:
+- consumer must wait for the producer to produce items
+- producer must wait for the consumer to empty spaces
+- only one thread can manipulate the buffer at once
 
-We use a semaphore for first two constraints (`full_count` and `empty_count`), and a lock/semaphore for the third.
+we use a semaphore for first two constraints (`full_count` and `empty_count`), and a lock/semaphore for the third.
 
-We call `wait(empty)` before producing, `wait(mutex)` to enter the critical section, `signal(mutex)` after exiting the critical section, and `signal(full)` to notify consumers.
-# Readers-Writers Problem
-An object is shared among several threads. Some threads only read the object, others only write it. We can allow multiple readers, but only one writer.
+we call `wait(empty)` before producing, `wait(mutex)` to enter the critical section, `signal(mutex)` after exiting the critical section, and `signal(full)` to notify consumers.
+# readers-writers problem
+an object is shared among several threads. some threads only read the object, others only write it. we can allow multiple readers, but only one writer.
 
-Using **semaphores** gives to constraints:
-- Writers can only proceed if there no readers or writers
-- Readers can only proceed if there are no writers
+using **semaphores** gives to constraints:
+- writers can only proceed if there no readers or writers
+- readers can only proceed if there are no writers
 ```c
 int read_count = 0;
 semaphore mutex = 1;
@@ -100,9 +100,9 @@ semaphore block_write = 1;
 
 write() {
 	wait(block_write); // wait until no readers or writers
-	
+
 	// do the writing
-	
+
 	signal(block_write);
 }
 
@@ -112,9 +112,9 @@ read() {
 	if (read_count == 1)
 		wait(block_write); // wait until no writers
 	signal(mutex);
-	
+
 	// do the reading
-	
+
 	wait(mutex);
 	read_count--;
 	if (read_count == 0)
@@ -122,7 +122,7 @@ read() {
 	signal(mutex);
 }
 ```
-# Implementation
+# implementation
 ```c
 struct semaphore {
     int   count = 1;
@@ -170,8 +170,8 @@ void signal(semaphore *s) {
     enable_interrupts();
 }
 ```
-# Test-and-Set
-An atomic hardware instruction that:
-1) Reads the current value of a lock variable
-2) Sets it to 'locked' (true)
-3) Returns the previous value
+# test-and-set
+an atomic hardware instruction that:
+1) reads the current value of a lock variable
+2) sets it to 'locked' (true)
+3) returns the previous value

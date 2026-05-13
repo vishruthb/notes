@@ -1,8 +1,8 @@
-# Graph Traversal
-Exploring nodes and edges in a graph to visit each node exactly once or to find a path between two nodes. Algorithms like [[💧 Breadth First Search]] and [[🚟 Depth First Search]] are used to traverse graphs.
-# Theory
-A graph is a collection of nodes (or vertices) connected by edges. They can be directed or undirected, and may contain cycles. Can be used in problems such as finding the shortest path.
-# Implementation
+# graph traversal
+exploring nodes and edges in a graph to visit each node exactly once or to find a path between two nodes. algorithms like [[💧 Breadth First Search|💧 breadth first search]] and [[🚟 Depth First Search|🚟 depth first search]] are used to traverse graphs.
+# theory
+a graph is a collection of nodes (or vertices) connected by edges. they can be directed or undirected, and may contain cycles. can be used in problems such as finding the shortest path.
+# implementation
 ```python
 class GraphNode:
     def __init__(self, val):

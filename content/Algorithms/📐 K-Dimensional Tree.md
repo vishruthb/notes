@@ -1,13 +1,13 @@
-# Multidimensional Search Problem
-Efficiently search, insert, and store data points in a k-dimensional space, such as points in a 2D or 3D plane. K-D Trees are commonly used in range search, nearest neighbor search, creating point clouds, etc.
-# Theory
-A K-Dimensional (K-D) Tree is a binary search tree extended to k-dimensional space. Each level of the tree partitions the space along a specific axis:
+# multidimensional search problem
+efficiently search, insert, and store data points in a k-dimensional space, such as points in a 2d or 3d plane. k-d trees are commonly used in range search, nearest neighbor search, creating point clouds, etc.
+# theory
+a k-dimensional (k-d) tree is a binary search tree extended to k-dimensional space. each level of the tree partitions the space along a specific axis:
 
-- At depth `d`, the axis used for comparison is `d % k`, where `k` is the number of dimensions.
-- Nodes store points in k-dimensional space, and left/right subtrees represent points on either side of the split axis.
+- at depth `d`, the axis used for comparison is `d % k`, where `k` is the number of dimensions.
+- nodes store points in k-dimensional space, and left/right subtrees represent points on either side of the split axis.
 
-The K-D Tree is particularly useful in applications where space-partitioning and efficient point queries (e.g., nearest neighbor) are required.
-# Implementation
+the k-d tree is particularly useful in applications where space-partitioning and efficient point queries (e.g., nearest neighbor) are required.
+# implementation
 ```python
 class KDTree:
     def __init__(self, points=None, k=2):
@@ -65,10 +65,10 @@ class KDTree:
 
         return next_best
 ```
-# Complexity
-1. **Insertion**: $O(\log(n))$ for balanced data.
-2. **Search (Nearest Neighbor)**: $O(\log(n))$ for balanced data, but $O(n)$ in the worst case.
-3. **Construction**: $O(n \cdot \log(n))$.
+# complexity
+1. **insertion**: $O(\log(n))$ for balanced data.
+2. **search (nearest neighbor)**: $O(\log(n))$ for balanced data, but $O(n)$ in the worst case.
+3. **construction**: $O(n \cdot \log(n))$.
 ---
-1. **Storage**: $O(n)$ to store all nodes.
-2. **Auxiliary Space**: $O(h)$ recursion depth during queries or construction, where $h = \log(n)$ for balanced data.
+1. **storage**: $O(n)$ to store all nodes.
+2. **auxiliary space**: $O(h)$ recursion depth during queries or construction, where $h = \log(n)$ for balanced data.

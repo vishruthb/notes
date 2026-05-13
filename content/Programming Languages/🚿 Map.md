@@ -1,16 +1,16 @@
-# Theory
+# theory
 `map` captures the element‑wise transformation pattern.
 
-**Type:** $\text{map} :: (a \to b) \;\to\; [a] \;\to\; [b]$
-### Semantics  
+**type:** $\text{map} :: (a \to b) \;\to\; [a] \;\to\; [b]$
+### semantics
 ```haskell
 map _ []     = []
 map f (x:xs) = f x : map f xs
 ```
-# Example
+# example
 ```haskell
 squares = map (^2)
 shout   = map toUpper
 ```
 
-Eta‑contraction often yields point‑free style: `shout = map toUpper`. Lazy and fusion‑friendly `map f (map g xs)` rewrites to `map (f . g) xs`.
+eta‑contraction often yields point‑free style: `shout = map toUpper`. lazy and fusion‑friendly `map f (map g xs)` rewrites to `map (f . g) xs`.

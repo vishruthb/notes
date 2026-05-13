@@ -1,23 +1,23 @@
-# Theory
-Haskell has a static, [Hindley-Milner](https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system), parametric polymorphic type system.
-### Annotation
+# theory
+haskell has a static, [hindley-milner](https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system), parametric polymorphic type system.
+### annotation
 ```haskell
 haskellIsAwesome :: Bool
 ```
-### Type Inference
-Compilers infer principal type, annotations are optional but recommended.
-#### Arrow Types
+### type inference
+compilers infer principal type, annotations are optional but recommended.
+#### arrow types
 ```haskell
 (Int -> Bool) -> [Int] -> [Bool]
 ```
-#### Polymorphism
+#### polymorphism
 ```haskell
 id :: a -> a
 ```
 
-**Type Classes:** `Num`, `Eq`, `Show` give ad‑hoc polymorphism (overloading).
-# Implementation
-Check types in GHCi:
+**type classes:** `Num`, `Eq`, `Show` give ad‑hoc polymorphism (overloading).
+# implementation
+check types in ghci:
 ```haskell
 :t map
 -- map :: (a -> b) -> [a] -> [b]

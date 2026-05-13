@@ -15,7 +15,7 @@ document.addEventListener("nav", () => {
       button.className = "clipboard-button"
       button.type = "button"
       button.innerHTML = svgCopy
-      button.ariaLabel = "Copy source"
+      button.ariaLabel = "copy source"
       function onClick() {
         navigator.clipboard.writeText(source).then(
           () => {
